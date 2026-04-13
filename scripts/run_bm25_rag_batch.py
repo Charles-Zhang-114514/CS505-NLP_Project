@@ -28,6 +28,20 @@ def load_nq_open_sample(split: str = "train", sample_size: int = 5):
     return examples
 
 
+def load_doc_sample(sample_size: int = 50):
+    # Load a simple text dataset as document database
+    dataset = load_dataset("ag_news", split=f"train[:{sample_size}]")
+
+    documents = []
+    for i, example in enumerate(dataset):
+        documents.append({
+            "doc_id": f"doc_{i}",
+            "text": example["text"]
+        })
+
+    return documents
+
+
 def max_em_over_answers(prediction: str, gold_answers: list[str]) -> float:
     return max([exact_match(prediction, ans) for ans in gold_answers])
 
@@ -37,17 +51,12 @@ def max_f1_over_answers(prediction: str, gold_answers: list[str]) -> float:
 
 
 def main():
-    # Load data
+    # Load QA examples
     examples = load_nq_open_sample(sample_size=5)
 
-    #Toy document database（关键！）
-    documents = [
-        "Hot Tub Time Machine was filmed at Fernie Alpine Resort.",
-        "In international waters, neither vessel has the right of way.",
-        "Annie works for Marley in Attack on Titan.",
-        "The Immigration Reform and Control Act was passed on November 6, 1986.",
-        "Puerto Rico was associated with the USA in 1950."
-    ]
+    # Load document database
+    doc_objects = load_doc_sample(sample_size=20)
+    documents = [doc["text"] for doc in doc_objects]
 
     # Build retriever
     retriever = BM25Retriever(documents)
@@ -62,13 +71,13 @@ def main():
         question = example["question"]
         gold_answers = example["answers"]
 
-        # 🔍 Retrieve documents
+        # Retrieve documents
         retrieved_docs = retriever.retrieve(question, top_k=2)
 
-        # 🤖 Generate answer with context
+        # Generate answer with context
         prediction = generator.answer_with_context(question, retrieved_docs)
 
-        # 📊 Evaluate
+        # Evaluate
         em = max_em_over_answers(prediction, gold_answers)
         f1 = max_f1_over_answers(prediction, gold_answers)
 
