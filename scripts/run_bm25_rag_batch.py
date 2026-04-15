@@ -1,6 +1,8 @@
+import json
 import os
 import sys
 from datasets import load_dataset
+from load_squad_docs import load_squad_docs
 
 # Add src folder to Python path
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -55,7 +57,8 @@ def main():
     examples = load_nq_open_sample(sample_size=5)
 
     # Load document database
-    doc_objects = load_doc_sample(sample_size=20)
+    #doc_objects = load_doc_sample(sample_size=20)
+    doc_objects = load_squad_docs(sample_size=1000)
     documents = [doc["text"] for doc in doc_objects]
 
     # Build retriever
@@ -66,6 +69,8 @@ def main():
 
     total_em = 0.0
     total_f1 = 0.0
+    
+    all_results = []
 
     for i, example in enumerate(examples, start=1):
         question = example["question"]
@@ -84,6 +89,15 @@ def main():
         total_em += em
         total_f1 += f1
 
+        all_results.append({
+            "question": question,
+            "gold_answers": gold_answers,
+            "retrieved_docs": retrieved_docs,
+            "prediction": prediction,
+            "em": em,
+            "f1": f1
+        })
+        
         print(f"\nExample {i}")
         print("Question:", question)
         print("Gold Answers:", gold_answers)
@@ -103,6 +117,12 @@ def main():
     print("Number of examples:", len(examples))
     print("Average EM:", round(avg_em, 4))
     print("Average F1:", round(avg_f1, 4))
+    
+    results_dir = os.path.join(PROJECT_ROOT, "results")
+    os.makedirs(results_dir, exist_ok=True)
+    
+    with open(os.path.join(results_dir, "bm25_results.json"), "w", encoding="utf-8") as f:
+        json.dump(all_results, f, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":

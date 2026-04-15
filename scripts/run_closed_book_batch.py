@@ -1,3 +1,4 @@
+import json
 import os
 import sys
 from datasets import load_dataset
@@ -50,6 +51,9 @@ def main():
     total_em = 0.0
     total_f1 = 0.0
 
+    # Assign results
+    all_results = []
+    
     # Run batch evaluation
     for i, example in enumerate(examples, start=1):
         question = example["question"]
@@ -62,6 +66,14 @@ def main():
 
         total_em += em
         total_f1 += f1
+        
+        all_results.append({
+            "question": question,
+            "gold_answers": gold_answers,
+            "prediction": prediction,
+            "em": em,
+            "f1": f1
+        })
 
         print(f"\nExample {i}")
         print("Question:", question)
@@ -77,6 +89,12 @@ def main():
     print("Number of examples:", len(examples))
     print("Average EM:", round(avg_em, 4))
     print("Average F1:", round(avg_f1, 4))
+    
+    results_dir = os.path.join(PROJECT_ROOT, "results")
+    os.makedirs(results_dir, exist_ok=True)
+    
+    with open(os.path.join(results_dir, "closed_book_results.json"), "w", encoding="utf-8") as f:
+        json.dump(all_results, f, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":
