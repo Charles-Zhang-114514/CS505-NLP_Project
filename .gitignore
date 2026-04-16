@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 results/
+.DS_Store
+src/.DS_Store
+data/
