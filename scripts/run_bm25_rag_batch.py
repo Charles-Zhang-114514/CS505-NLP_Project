@@ -2,7 +2,7 @@ import json
 import os
 import sys
 from datasets import load_dataset
-from load_squad_docs import load_squad_docs
+#from load_squad_docs import load_squad_docs
 
 # Add src folder to Python path
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -54,12 +54,19 @@ def max_f1_over_answers(prediction: str, gold_answers: list[str]) -> float:
 
 def main():
     # Load QA examples
-    examples = load_nq_open_sample(sample_size=5)
+    examples = load_nq_open_sample(split="validation", sample_size=20)
 
     # Load document database
     #doc_objects = load_doc_sample(sample_size=20)
-    doc_objects = load_squad_docs(sample_size=1000)
+    #doc_objects = load_squad_docs(sample_size=1000)
+    #documents = [doc["text"] for doc in doc_objects]
+    
+    # Load Wikipedia oracle corpus (built by load_wiki_oracle.py)
+    corpus_path = os.path.join(PROJECT_ROOT, "data", "corpus", "wiki_oracle.json")
+    with open(corpus_path, "r", encoding="utf-8") as f:
+        doc_objects = json.load(f)
     documents = [doc["text"] for doc in doc_objects]
+    print(f"Loaded {len(documents)} docs from {corpus_path}")
 
     # Build retriever
     retriever = BM25Retriever(documents)
@@ -121,7 +128,9 @@ def main():
     results_dir = os.path.join(PROJECT_ROOT, "results")
     os.makedirs(results_dir, exist_ok=True)
     
-    with open(os.path.join(results_dir, "bm25_results.json"), "w", encoding="utf-8") as f:
+    
+    #with open(os.path.join(results_dir, "bm25_results.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(results_dir, "bm25_wiki_oracle_results.json"), "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
 
 
