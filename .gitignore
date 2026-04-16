@@ -1,5 +1,11 @@
 __pycache__/
 *.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
 results/
 data/**
 !data/corpus/
