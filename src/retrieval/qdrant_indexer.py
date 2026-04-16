@@ -16,22 +16,26 @@ load_dotenv()
 class QdrantIndexer:
     def __init__(
         self,
-        collection_name: str = "wiki_chunks_bge_small",
-        model_name: str = "BAAI/bge-small-en-v1.5",
+        collection_name: str | None = None,
+        model_name: str | None = None,
         url: str | None = None,
         api_key: str | None = None,
     ):
-        self.collection_name = collection_name
-        self.embedder = Embedder(model_name=model_name)
-
+        self.collection_name = collection_name or os.getenv("QDRANT_COLLECTION_NAME")
+        self.model_name = model_name or os.getenv("EMBEDDING_MODEL_NAME")
         self.url = url or os.getenv("QDRANT_URL")
         self.api_key = api_key or os.getenv("QDRANT_API_KEY")
 
+        if not self.collection_name:
+            raise ValueError("QDRANT_COLLECTION_NAME is not set.")
+        if not self.model_name:
+            raise ValueError("EMBEDDING_MODEL_NAME is not set.")
         if not self.url:
             raise ValueError("QDRANT_URL is not set.")
         if not self.api_key:
             raise ValueError("QDRANT_API_KEY is not set.")
 
+        self.embedder = Embedder(model_name=self.model_name)
         self.client = QdrantClient(url=self.url, api_key=self.api_key)
 
     def collection_exists(self) -> bool:
