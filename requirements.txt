@@ -3,3 +3,5 @@ transformers
 sentencepiece
 accelerate
 rank-bm25
+datasets
+wikipedia
