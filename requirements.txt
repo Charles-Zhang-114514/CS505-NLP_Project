@@ -5,3 +5,7 @@ accelerate
 rank-bm25
 datasets
 wikipedia
+sentence-transformers
+numpy<2
+qdrant-client
+aiohttp<3.10
