@@ -11,3 +11,4 @@ results/
 data/**
 !data/corpus/
 !data/corpus/wiki_oracle.json
+.env
