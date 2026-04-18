@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 
-from embedder import Embedder
+from src.retrieval.embedder import Embedder
 
 load_dotenv()
 

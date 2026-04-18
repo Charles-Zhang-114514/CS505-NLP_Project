@@ -10,3 +10,7 @@ numpy<2
 qdrant-client
 aiohttp<3.10
 python-dotenv
+wikipedia>=1.4.0
+python-dotenv
+qdrant-client
+sentence-transformers
