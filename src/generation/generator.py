@@ -1,13 +1,40 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForCausalLM
+
+
+class SimpleGenerator:
+    """Lightweight generator using flan-t5-base (seq2seq)."""
+
+    def __init__(self, model_name="google/flan-t5-base"):
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+
+    def answer_question(self, question: str) -> str:
+        """Closed-book QA: answer from parametric knowledge only."""
+        input_text = f"Answer the following question: {question}"
+        inputs = self.tokenizer(input_text, return_tensors="pt", truncation=True)
+        outputs = self.model.generate(**inputs, max_new_tokens=64)
+        return self.tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
+
+    def answer_with_context(self, question: str, context_docs: list) -> str:
+        """RAG QA: answer given retrieved context documents."""
+        context = "\n".join(context_docs)
+        input_text = f"Given the following context:\n{context}\n\nAnswer the question: {question}"
+        inputs = self.tokenizer(input_text, return_tensors="pt", truncation=True)
+        outputs = self.model.generate(**inputs, max_new_tokens=64)
+        return self.tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
 
 
 class QwenGenerator:
+    """Heavier generator using Qwen3.5-4B (causal LM). For future use."""
+
     def __init__(self, model_name="Qwen/Qwen3.5-4B", enable_thinking=False):
         self.model_name = model_name
         self.enable_thinking = enable_thinking
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        self.model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16, device_map="auto", trust_remote_code=True)
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_name, torch_dtype=torch.float16, device_map="auto", trust_remote_code=True
+        )
         self.model.eval()
 
     def generate(self, query, retrieved_chunks, max_new_tokens=64):
@@ -24,14 +51,22 @@ class QwenGenerator:
 
     def _build_rag_prompt(self, query, context_texts):
         context = "\n\n".join(f"[{i+1}] {text}" for i, text in enumerate(context_texts))
-        return f"Use the following context to answer the question accurately and briefly.\n\nContext:\n{context}\n\nQuestion: {query}\nAnswer:"
+        return (
+            f"Use the following context to answer the question accurately and briefly.\n\n"
+            f"Context:\n{context}\n\nQuestion: {query}\nAnswer:"
+        )
 
     def _call_model(self, prompt, max_new_tokens):
         messages = [{"role": "user", "content": prompt}]
-        text = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True, enable_thinking=self.enable_thinking)
+        text = self.tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True, enable_thinking=self.enable_thinking
+        )
         inputs = self.tokenizer(text, return_tensors="pt").to(self.model.device)
         input_len = inputs["input_ids"].shape[1]
         with torch.no_grad():
-            outputs = self.model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False, pad_token_id=self.tokenizer.eos_token_id)
+            outputs = self.model.generate(
+                **inputs, max_new_tokens=max_new_tokens, do_sample=False,
+                pad_token_id=self.tokenizer.eos_token_id
+            )
         new_tokens = outputs[0][input_len:]
         return self.tokenizer.decode(new_tokens, skip_special_tokens=True).strip()

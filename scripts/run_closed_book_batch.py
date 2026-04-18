@@ -43,7 +43,7 @@ def max_f1_over_answers(prediction: str, gold_answers: list[str]) -> float:
 
 def main():
     # Load sample data
-    examples = load_nq_open_sample(sample_size=5)
+    examples = load_nq_open_sample(split="validation", sample_size=20)
 
     # Load generator
     generator = SimpleGenerator(model_name="google/flan-t5-base")
@@ -93,7 +93,7 @@ def main():
     results_dir = os.path.join(PROJECT_ROOT, "results")
     os.makedirs(results_dir, exist_ok=True)
     
-    with open(os.path.join(results_dir, "closed_book_results.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(results_dir, "closed_book_val20_results.json"), "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False)
 
 
