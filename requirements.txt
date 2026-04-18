@@ -14,3 +14,14 @@ wikipedia>=1.4.0
 python-dotenv
 qdrant-client
 sentence-transformers
+datasets
+wikipedia
+sentence-transformers
+qdrant-client
+python-dotenv
+rank-bm25
+nltk
+scikit-learn
+numpy
+transformers
+torch
