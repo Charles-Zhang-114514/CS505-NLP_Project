@@ -93,19 +93,27 @@ def bm25_retrieve(chunks: list[dict[str, Any]], query: str, top_k: int) -> list[
     return results
 
 
-def generate_answer(generator_type: str, generator_model: str, query: str, retrieved_chunks: list[dict[str, Any]], max_new_tokens: int) -> str:
+def build_generator(generator_type: str, generator_model: str) -> Any:
     if generator_type == "simple":
-        gen = SimpleGenerator(model_name=generator_model)
-        if not retrieved_chunks:
-            return gen.answer_question(query)
-        context_docs = [c["text"] for c in sorted(retrieved_chunks, key=lambda x: x.get("rank", 9999))]
-        return gen.answer_with_context(query, context_docs)
+        return SimpleGenerator(model_name=generator_model)
 
     if generator_type == "qwen":
-        gen = QwenGenerator(model_name=generator_model)
+        return QwenGenerator(model_name=generator_model)
+
+    raise ValueError(f"Unsupported generator_type={generator_type}")
+
+
+def generate_answer(generator: Any, generator_type: str, query: str, retrieved_chunks: list[dict[str, Any]], max_new_tokens: int) -> str:
+    if generator_type == "simple":
         if not retrieved_chunks:
-            return gen.answer_closed_book(query, max_new_tokens=max_new_tokens)["answer"]
-        return gen.generate(query, retrieved_chunks, max_new_tokens=max_new_tokens)["answer"]
+            return generator.answer_question(query)
+        context_docs = [c["text"] for c in sorted(retrieved_chunks, key=lambda x: x.get("rank", 9999))]
+        return generator.answer_with_context(query, context_docs)
+
+    if generator_type == "qwen":
+        if not retrieved_chunks:
+            return generator.answer_closed_book(query, max_new_tokens=max_new_tokens)["answer"]
+        return generator.generate(query, retrieved_chunks, max_new_tokens=max_new_tokens)["answer"]
 
     raise ValueError(f"Unsupported generator_type={generator_type}")
 
@@ -167,6 +175,10 @@ def main() -> None:
     total_em = 0.0
     total_f1 = 0.0
     total_containment = 0.0
+    generator = build_generator(
+        generator_type=args.generator_type,
+        generator_model=args.generator_model,
+    )
 
     for i, ex in enumerate(qa_examples, start=1):
         query = ex["question"]
@@ -186,8 +198,8 @@ def main() -> None:
             raise ValueError(f"Unsupported mode={args.mode}")
 
         pred = generate_answer(
+            generator=generator,
             generator_type=args.generator_type,
-            generator_model=args.generator_model,
             query=query,
             retrieved_chunks=retrieved,
             max_new_tokens=args.max_new_tokens,
