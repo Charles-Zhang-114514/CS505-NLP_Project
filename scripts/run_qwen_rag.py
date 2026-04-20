@@ -1,7 +1,4 @@
-"""
-Stage 4 — Generation
-正式运行脚本：从 Stage 3 的 retrieved_chunks 生成答案，并计算 EM / F1
-"""
+"""Stage 4 generation runner for Qwen-based QA evaluation."""
 
 import json
 from src.generation.generator import QwenGenerator
@@ -9,16 +6,14 @@ from src.eval.qa_metrics import exact_match, f1_score
 
 
 def run(
-    retrieved_results_path: str,   # Stage 3 输出的 JSON 文件路径
-    output_path: str,              # 结果保存路径
+    retrieved_results_path: str,
+    output_path: str,
     model_name: str = "Qwen/Qwen3.5-4B",
     max_new_tokens: int = 64,
-    mode: str = "rag",             # "rag" 或 "closed_book"
+    mode: str = "rag",
 ):
-    # 加载 Stage 3 的检索结果
     with open(retrieved_results_path, "r") as f:
         dataset = json.load(f)
-    # dataset 格式：list of {query, gold_answers, retrieved_chunks}
 
     gen = QwenGenerator(model_name=model_name)
 
@@ -30,7 +25,6 @@ def run(
         gold_answers = item["gold_answers"]
         retrieved_chunks = item.get("retrieved_chunks", [])
 
-        # 生成答案
         if mode == "rag":
             result = gen.generate(query, retrieved_chunks, max_new_tokens)
         else:
@@ -38,7 +32,6 @@ def run(
 
         pred = result["answer"]
 
-        # 计算 EM / F1
         em = exact_match(pred, gold_answers)
         f1 = f1_score(pred, gold_answers)
         total_em += em
@@ -54,7 +47,6 @@ def run(
         print(f"  Gold: {gold_answers}")
         print(f"  EM: {em:.2f}  F1: {f1:.2f}\n")
 
-    # 汇总
     n = len(dataset)
     summary = {
         "mode": mode,
@@ -78,8 +70,8 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input",  required=True, help="Stage 3 输出的 JSON 路径")
-    parser.add_argument("--output", required=True, help="结果保存路径")
+    parser.add_argument("--input",  required=True, help="Path to the Stage 3 retrieval-results JSON file")
+    parser.add_argument("--output", required=True, help="Path to save the evaluation results")
     parser.add_argument("--model",  default="Qwen/Qwen3.5-4B")
     parser.add_argument("--max_tokens", type=int, default=64)
     parser.add_argument("--mode", choices=["rag", "closed_book"], default="rag")

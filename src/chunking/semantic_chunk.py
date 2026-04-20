@@ -48,7 +48,7 @@ def semantic_chunk_document(
     if not text or not text.strip():
         return []
 
-    # 第一次用 nltk 可能需要这个资源
+
     try:
         sentences = sent_tokenize(text)
     except LookupError:
@@ -59,7 +59,7 @@ def semantic_chunk_document(
     if not sentences:
         return []
 
-    # 如果只有一句话，直接作为一个 chunk
+    
     if len(sentences) == 1:
         return [
             _make_chunk_record(
