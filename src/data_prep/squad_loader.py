@@ -77,6 +77,6 @@ def load_squad_corpus(split: str = "validation", sample_size: int | None = None)
 
 
 def save_json(data: list[dict[str, Any]], output_path: str) -> None:
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

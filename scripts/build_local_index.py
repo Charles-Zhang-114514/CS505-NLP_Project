@@ -1,7 +1,11 @@
 import argparse
 import json
 import os
+import platform
+import socket
 import sys
+import time
+from datetime import datetime, timezone
 from typing import Any
 
 import numpy as np
@@ -27,6 +31,8 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    build_started_at = datetime.now(timezone.utc).isoformat()
+    build_start = time.perf_counter()
     chunks = load_json(args.input_chunks)
     texts = [c["text"] for c in chunks]
 
@@ -44,9 +50,18 @@ def main() -> None:
     with open(meta_out, "w", encoding="utf-8") as f:
         json.dump(
             {
+                "script": "build_local_index.py",
+                "input_chunks": args.input_chunks,
+                "output_dir": args.output_dir,
                 "embedding_model": args.embedding_model,
                 "num_chunks": len(chunks),
                 "dimension": int(embeddings.shape[1]) if len(embeddings) else 0,
+                "build_started_at": build_started_at,
+                "build_finished_at": datetime.now(timezone.utc).isoformat(),
+                "total_runtime_sec": round(time.perf_counter() - build_start, 6),
+                "python_version": sys.version.split()[0],
+                "platform": platform.platform(),
+                "hostname": socket.gethostname(),
             },
             f,
             ensure_ascii=False,

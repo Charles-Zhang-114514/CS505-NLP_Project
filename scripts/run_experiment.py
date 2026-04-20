@@ -1,8 +1,13 @@
 import argparse
+import datetime
 import json
 import os
+import platform
+import random
 import re
+import socket
 import sys
+import time
 from typing import Any
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -10,6 +15,16 @@ sys.path.append(PROJECT_ROOT)
 sys.path.append(os.path.join(PROJECT_ROOT, "src", "retrieval"))
 
 from datasets import load_dataset
+
+try:
+    import numpy as np
+except ImportError:
+    np = None
+
+try:
+    import torch
+except ImportError:
+    torch = None
 
 from src.data_prep.squad_loader import load_squad_qa_examples
 from src.eval.qa_metrics import exact_match, f1_score
@@ -23,8 +38,22 @@ def ensure_dir(path: str) -> None:
     os.makedirs(path, exist_ok=True)
 
 
+def utc_now_iso() -> str:
+    return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+
 def normalize(text: str) -> str:
     return " ".join(str(text).lower().split())
+
+
+def set_global_seed(seed: int) -> None:
+    random.seed(seed)
+    if np is not None:
+        np.random.seed(seed)
+    if torch is not None:
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(seed)
 
 
 def contains_any_answer(text: str, answers: list[str]) -> str | None:
@@ -103,6 +132,16 @@ def build_generator(generator_type: str, generator_model: str) -> Any:
     raise ValueError(f"Unsupported generator_type={generator_type}")
 
 
+def detect_device(generator: Any) -> str:
+    model = getattr(generator, "model", None)
+    device = getattr(model, "device", None)
+    if device is not None:
+        return str(device)
+    if torch is not None and torch.cuda.is_available():
+        return "cuda"
+    return "cpu"
+
+
 def generate_answer(generator: Any, generator_type: str, query: str, retrieved_chunks: list[dict[str, Any]], max_new_tokens: int) -> str:
     if generator_type == "simple":
         if not retrieved_chunks:
@@ -136,6 +175,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--generator_type", choices=["simple", "qwen"], default="simple")
     parser.add_argument("--generator_model", default="google/flan-t5-base")
     parser.add_argument("--max_new_tokens", type=int, default=64)
+    parser.add_argument("--seed", type=int, default=42)
 
     parser.add_argument("--corpus_name", default=None, help="Optional human-readable corpus label for metadata.")
     parser.add_argument("--chunking", default=None, help="Optional chunking label for metadata.")
@@ -147,6 +187,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    run_started_at = utc_now_iso()
+    run_start = time.perf_counter()
+    set_global_seed(args.seed)
+
+    setup_start = time.perf_counter()
     qa_examples = load_qa_examples(args.qa_dataset, args.qa_split, args.num_questions, args.qa_path)
 
     chunks = None
@@ -179,11 +224,17 @@ def main() -> None:
         generator_type=args.generator_type,
         generator_model=args.generator_model,
     )
+    setup_time_sec = time.perf_counter() - setup_start
+    total_retrieval_time = 0.0
+    total_generation_time = 0.0
+    total_example_time = 0.0
 
     for i, ex in enumerate(qa_examples, start=1):
+        example_start = time.perf_counter()
         query = ex["question"]
         gold_answers = ex["answers"]
 
+        retrieval_start = time.perf_counter()
         if args.mode == "closed_book":
             retrieved = []
         elif args.mode == "bm25":
@@ -196,7 +247,9 @@ def main() -> None:
                 hit["rank"] = rank
         else:
             raise ValueError(f"Unsupported mode={args.mode}")
+        retrieval_time_sec = time.perf_counter() - retrieval_start
 
+        generation_start = time.perf_counter()
         pred = generate_answer(
             generator=generator,
             generator_type=args.generator_type,
@@ -204,11 +257,16 @@ def main() -> None:
             retrieved_chunks=retrieved,
             max_new_tokens=args.max_new_tokens,
         )
+        generation_time_sec = time.perf_counter() - generation_start
+        example_time_sec = time.perf_counter() - example_start
 
         em, f1, containment = best_em_f1_containment(pred, gold_answers)
         total_em += em
         total_f1 += f1
         total_containment += containment
+        total_retrieval_time += retrieval_time_sec
+        total_generation_time += generation_time_sec
+        total_example_time += example_time_sec
 
         results.append(
             {
@@ -219,6 +277,9 @@ def main() -> None:
                 "exact_match": em,
                 "f1_score": f1,
                 "answer_containment": containment,
+                "retrieval_time_sec": round(retrieval_time_sec, 6),
+                "generation_time_sec": round(generation_time_sec, 6),
+                "example_time_sec": round(example_time_sec, 6),
                 "retrieved_chunks": retrieved,
             }
         )
@@ -227,6 +288,10 @@ def main() -> None:
         print(f"  Pred: {pred}")
         print(f"  Gold: {gold_answers}")
         print(f"  EM: {em:.2f}  F1: {f1:.2f}  Containment: {containment}")
+        print(
+            f"  Time: retrieval={retrieval_time_sec:.3f}s  "
+            f"generation={generation_time_sec:.3f}s  total={example_time_sec:.3f}s"
+        )
 
     experiment_config = {
         "qa_dataset": args.qa_dataset,
@@ -244,6 +309,24 @@ def main() -> None:
         "max_new_tokens": args.max_new_tokens,
         "corpus_name": args.corpus_name,
         "chunking": args.chunking,
+        "seed": args.seed,
+    }
+    run_finished_at = utc_now_iso()
+    total_runtime_sec = time.perf_counter() - run_start
+    runtime = {
+        "run_started_at": run_started_at,
+        "run_finished_at": run_finished_at,
+        "setup_time_sec": round(setup_time_sec, 6),
+        "total_runtime_sec": round(total_runtime_sec, 6),
+        "avg_example_time_sec": round(total_example_time / len(qa_examples), 6) if qa_examples else 0.0,
+        "avg_retrieval_time_sec": round(total_retrieval_time / len(qa_examples), 6) if qa_examples else 0.0,
+        "avg_generation_time_sec": round(total_generation_time / len(qa_examples), 6) if qa_examples else 0.0,
+    }
+    environment = {
+        "python_version": sys.version.split()[0],
+        "platform": platform.platform(),
+        "hostname": socket.gethostname(),
+        "device": detect_device(generator),
     }
 
     summary = {
@@ -258,6 +341,12 @@ def main() -> None:
         "avg_exact_match": total_em / len(qa_examples) if qa_examples else 0.0,
         "avg_f1": total_f1 / len(qa_examples) if qa_examples else 0.0,
         "avg_answer_containment": total_containment / len(qa_examples) if qa_examples else 0.0,
+        "total_runtime_sec": runtime["total_runtime_sec"],
+        "avg_example_time_sec": runtime["avg_example_time_sec"],
+        "avg_retrieval_time_sec": runtime["avg_retrieval_time_sec"],
+        "avg_generation_time_sec": runtime["avg_generation_time_sec"],
+        "runtime": runtime,
+        "environment": environment,
         "experiment_config": experiment_config,
         "results": results,
     }
@@ -273,6 +362,7 @@ def main() -> None:
     print(f"Avg EM: {summary['avg_exact_match']:.4f}")
     print(f"Avg F1: {summary['avg_f1']:.4f}")
     print(f"Avg Containment: {summary['avg_answer_containment']:.4f}")
+    print(f"Total runtime: {summary['total_runtime_sec']:.2f}s")
 
 
 if __name__ == "__main__":
