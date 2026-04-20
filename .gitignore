@@ -13,3 +13,4 @@ data/**
 !data/corpus/wiki_oracle.json
 .env
 **/.DS_Store
+**/exports
