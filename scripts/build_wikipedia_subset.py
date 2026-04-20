@@ -76,7 +76,7 @@ def main() -> None:
             window_size=args.window_size,
             stride=args.stride,
             sleep_seconds=args.sleep_seconds,
-            embed_model_name=args.embedding_model,
+            embed_model_name=args.embedding_model, 
         )
 
     save_json(docs, args.output_path)
