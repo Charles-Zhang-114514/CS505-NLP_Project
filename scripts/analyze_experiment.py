@@ -114,6 +114,8 @@ def filter_result_items(items: list[dict[str, Any]], only_errors: bool, only_non
 
 def metadata_from_result(data: dict[str, Any], result_path: str, corpus_path: str | None = None, chunks_path: str | None = None) -> dict[str, Any]:
     experiment_config = data.get("experiment_config", {})
+    runtime = data.get("runtime", {})
+    environment = data.get("environment", {})
     meta = {
         "result_file": result_path,
         "mode": data.get("mode"),
@@ -129,6 +131,12 @@ def metadata_from_result(data: dict[str, Any], result_path: str, corpus_path: st
         "avg_em": data.get("avg_exact_match"),
         "avg_f1": data.get("avg_f1"),
         "avg_answer_containment": data.get("avg_answer_containment"),
+        "seed": experiment_config.get("seed"),
+        "total_runtime_sec": data.get("total_runtime_sec") or runtime.get("total_runtime_sec"),
+        "avg_example_time_sec": data.get("avg_example_time_sec") or runtime.get("avg_example_time_sec"),
+        "avg_retrieval_time_sec": data.get("avg_retrieval_time_sec") or runtime.get("avg_retrieval_time_sec"),
+        "avg_generation_time_sec": data.get("avg_generation_time_sec") or runtime.get("avg_generation_time_sec"),
+        "device": environment.get("device"),
     }
     if corpus_path:
         meta["corpus_path"] = corpus_path
@@ -209,6 +217,23 @@ def command_summary(args: argparse.Namespace) -> None:
         "containment_count": containment_hits,
         "containment_total": len(results),
     })
+
+    runtime = data.get("runtime", {})
+    if runtime:
+        print("\nRuntime")
+        print(f"total_runtime_sec: {runtime.get('total_runtime_sec')}")
+        print(f"setup_time_sec: {runtime.get('setup_time_sec')}")
+        print(f"avg_example_time_sec: {runtime.get('avg_example_time_sec')}")
+        print(f"avg_retrieval_time_sec: {runtime.get('avg_retrieval_time_sec')}")
+        print(f"avg_generation_time_sec: {runtime.get('avg_generation_time_sec')}")
+        export_rows.append({
+            "section": "runtime",
+            "total_runtime_sec": runtime.get("total_runtime_sec"),
+            "setup_time_sec": runtime.get("setup_time_sec"),
+            "avg_example_time_sec": runtime.get("avg_example_time_sec"),
+            "avg_retrieval_time_sec": runtime.get("avg_retrieval_time_sec"),
+            "avg_generation_time_sec": runtime.get("avg_generation_time_sec"),
+        })
 
     maybe_export_csv(args.export_csv, export_rows)
 

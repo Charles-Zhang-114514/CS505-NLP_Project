@@ -16,7 +16,7 @@ from src.retrieval.embedder import Embedder
 
 
 def save_json(data: list[dict[str, Any]], output_path: str) -> None:
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
@@ -107,6 +107,12 @@ def build_random_wikipedia_subset(
         )
         print(f"[{len(docs)}/{num_docs}] random title={title!r} ✓")
         time.sleep(sleep_seconds)
+
+    if len(docs) < num_docs:
+        print(
+            f"Warning: requested {num_docs} docs, but only built {len(docs)} "
+            f"after {attempts} attempts."
+        )
 
     print(f"Built random Wikipedia subset with {len(docs)} docs.")
     return docs
