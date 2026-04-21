@@ -100,6 +100,71 @@ def load_chunks(path: str) -> list[dict[str, Any]]:
         return json.load(f)
 
 
+def infer_json_list_length(path: str | None) -> int | None:
+    if not path or not os.path.exists(path):
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, list):
+        return len(data)
+    return None
+
+
+def infer_sample_size_from_text(text: str | None) -> int | None:
+    if not text:
+        return None
+    patterns = [
+        r"_qa_(\d+)(?:_|\.json|$)",
+        r"_corpus_(\d+)(?:_|\.json|$)",
+        r"squad_validation_(\d+)(?:_|$)",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            return int(match.group(1))
+    return None
+
+
+def infer_corpus_path(qa_path: str | None, corpus_path: str | None) -> str | None:
+    if corpus_path:
+        return corpus_path
+    if not qa_path:
+        return None
+
+    candidates = []
+    if f"{os.sep}qa{os.sep}" in qa_path:
+        candidates.append(qa_path.replace(f"{os.sep}qa{os.sep}", f"{os.sep}corpus{os.sep}"))
+    if "_qa_" in qa_path:
+        candidates.append(qa_path.replace("_qa_", "_corpus_"))
+
+    combined = qa_path
+    if f"{os.sep}qa{os.sep}" in combined:
+        combined = combined.replace(f"{os.sep}qa{os.sep}", f"{os.sep}corpus{os.sep}")
+    if "_qa_" in combined:
+        combined = combined.replace("_qa_", "_corpus_")
+    candidates.append(combined)
+
+    for candidate in candidates:
+        if candidate and os.path.exists(candidate):
+            return candidate
+    return None
+
+
+def infer_corpus_doc_count(corpus_path: str | None, chunks_path: str | None) -> int | None:
+    corpus_count = infer_json_list_length(corpus_path)
+    if corpus_count is not None:
+        return corpus_count
+
+    if not chunks_path or not os.path.exists(chunks_path):
+        return None
+    with open(chunks_path, "r", encoding="utf-8") as f:
+        chunks = json.load(f)
+    if not isinstance(chunks, list):
+        return None
+    doc_ids = {chunk.get("doc_id") for chunk in chunks if isinstance(chunk, dict) and chunk.get("doc_id")}
+    return len(doc_ids) if doc_ids else len(chunks)
+
+
 def best_em_f1_containment(prediction: str, gold_answers: list[str]) -> tuple[int, float, int]:
     em = max(exact_match(prediction, gold) for gold in gold_answers)
     f1 = max(f1_score(prediction, gold) for gold in gold_answers)
@@ -178,6 +243,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=42)
 
     parser.add_argument("--corpus_name", default=None, help="Optional human-readable corpus label for metadata.")
+    parser.add_argument("--corpus_path", default=None, help="Optional local corpus json file for metadata.")
+    parser.add_argument("--qa_sample_size", type=int, default=None, help="Optional total QA sample size used to build the experiment inputs.")
+    parser.add_argument("--corpus_doc_count", type=int, default=None, help="Optional deduplicated corpus document count for metadata.")
     parser.add_argument("--chunking", default=None, help="Optional chunking label for metadata.")
 
     parser.add_argument("--output_dir", default="results")
@@ -225,6 +293,15 @@ def main() -> None:
         generator_model=args.generator_model,
     )
     setup_time_sec = time.perf_counter() - setup_start
+    resolved_corpus_path = infer_corpus_path(args.qa_path, args.corpus_path)
+    resolved_qa_sample_size = (
+        args.qa_sample_size
+        or infer_json_list_length(args.qa_path)
+        or infer_sample_size_from_text(args.qa_path)
+        or infer_sample_size_from_text(args.corpus_name)
+        or len(qa_examples)
+    )
+    resolved_corpus_doc_count = args.corpus_doc_count or infer_corpus_doc_count(resolved_corpus_path, args.chunks_path)
     total_retrieval_time = 0.0
     total_generation_time = 0.0
     total_example_time = 0.0
@@ -297,6 +374,9 @@ def main() -> None:
         "qa_dataset": args.qa_dataset,
         "qa_split": args.qa_split,
         "qa_path": args.qa_path,
+        "qa_sample_size": resolved_qa_sample_size,
+        "corpus_path": resolved_corpus_path,
+        "corpus_doc_count": resolved_corpus_doc_count,
         "num_questions": len(qa_examples),
         "mode": args.mode,
         "top_k": args.top_k,
@@ -334,6 +414,9 @@ def main() -> None:
         "qa_dataset": args.qa_dataset,
         "qa_split": args.qa_split,
         "num_questions": len(qa_examples),
+        "qa_sample_size": resolved_qa_sample_size,
+        "corpus_path": resolved_corpus_path,
+        "corpus_doc_count": resolved_corpus_doc_count,
         "top_k": args.top_k,
         "embedding_model": args.embedding_model if args.mode in ["local_dense", "qdrant_dense"] else None,
         "generator_type": args.generator_type,
