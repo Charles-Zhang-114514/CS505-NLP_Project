@@ -122,11 +122,14 @@ def metadata_from_result(data: dict[str, Any], result_path: str, corpus_path: st
         "qa_dataset": data.get("qa_dataset") or experiment_config.get("qa_dataset"),
         "qa_split": data.get("qa_split") or experiment_config.get("qa_split"),
         "num_questions": data.get("num_questions") or experiment_config.get("num_questions"),
+        "qa_sample_size": data.get("qa_sample_size") or experiment_config.get("qa_sample_size"),
         "top_k": data.get("top_k") or experiment_config.get("top_k"),
         "generator_type": data.get("generator_type") or experiment_config.get("generator_type"),
         "generator_model": data.get("generator_model") or experiment_config.get("generator_model"),
         "embedding_model": data.get("embedding_model") or experiment_config.get("embedding_model"),
         "corpus_name": experiment_config.get("corpus_name"),
+        "corpus_path": data.get("corpus_path") or experiment_config.get("corpus_path"),
+        "corpus_doc_count": data.get("corpus_doc_count") or experiment_config.get("corpus_doc_count"),
         "chunking": experiment_config.get("chunking"),
         "avg_em": data.get("avg_exact_match"),
         "avg_f1": data.get("avg_f1"),
@@ -138,7 +141,7 @@ def metadata_from_result(data: dict[str, Any], result_path: str, corpus_path: st
         "avg_generation_time_sec": data.get("avg_generation_time_sec") or runtime.get("avg_generation_time_sec"),
         "device": environment.get("device"),
     }
-    if corpus_path:
+    if corpus_path and not meta.get("corpus_path"):
         meta["corpus_path"] = corpus_path
     if chunks_path:
         meta["chunks_path"] = chunks_path
