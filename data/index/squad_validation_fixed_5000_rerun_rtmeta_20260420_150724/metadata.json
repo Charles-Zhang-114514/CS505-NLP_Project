@@ -1,0 +1,14 @@
+{
+  "script": "build_local_index.py",
+  "input_chunks": "data/chunks/squad_validation_fixed_5000_rerun_rtmeta_20260420_150724.json",
+  "output_dir": "data/index/squad_validation_fixed_5000_rerun_rtmeta_20260420_150724",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "num_chunks": 1304,
+  "dimension": 384,
+  "build_started_at": "2026-04-20T19:09:57.183176+00:00",
+  "build_finished_at": "2026-04-20T19:10:02.938122+00:00",
+  "total_runtime_sec": 5.754942,
+  "python_version": "3.13.7",
+  "platform": "macOS-15.7.3-arm64-arm-64bit-Mach-O",
+  "hostname": "MacBook-Pro-3.local"
+}

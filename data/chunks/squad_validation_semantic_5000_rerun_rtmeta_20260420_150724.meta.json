@@ -1,0 +1,18 @@
+{
+  "script": "build_chunks.py",
+  "input_corpus": "data/corpus/squad_validation_corpus_5000_rerun_rtmeta_20260420_150724.json",
+  "output_path": "data/chunks/squad_validation_semantic_5000_rerun_rtmeta_20260420_150724.json",
+  "chunking": "semantic",
+  "fixed_chunk_size": 120,
+  "fixed_overlap": 20,
+  "semantic_chunk_size": 250,
+  "semantic_threshold": 0.75,
+  "num_docs": 906,
+  "num_chunks": 4417,
+  "build_started_at": "2026-04-20T19:09:53.434678+00:00",
+  "build_finished_at": "2026-04-20T19:09:54.203006+00:00",
+  "total_runtime_sec": 0.768323,
+  "python_version": "3.13.7",
+  "platform": "macOS-15.7.3-arm64-arm-64bit-Mach-O",
+  "hostname": "MacBook-Pro-3.local"
+}

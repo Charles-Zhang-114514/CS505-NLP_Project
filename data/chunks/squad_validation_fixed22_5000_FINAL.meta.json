@@ -1,0 +1,18 @@
+{
+  "script": "build_chunks.py",
+  "input_corpus": "data/corpus/squad_validation_corpus_5000_rerun_rtmeta_20260420_150724.json",
+  "output_path": "data/chunks/squad_validation_fixed22_5000_FINAL.json",
+  "chunking": "fixed",
+  "fixed_chunk_size": 22,
+  "fixed_overlap": 4,
+  "semantic_chunk_size": 250,
+  "semantic_threshold": 0.75,
+  "num_docs": 906,
+  "num_chunks": 6109,
+  "build_started_at": "2026-05-04T05:23:54.475839+00:00",
+  "build_finished_at": "2026-05-04T05:23:54.522500+00:00",
+  "total_runtime_sec": 0.046665,
+  "python_version": "3.14.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hostname": "DESKTOP-JG6JDSD"
+}

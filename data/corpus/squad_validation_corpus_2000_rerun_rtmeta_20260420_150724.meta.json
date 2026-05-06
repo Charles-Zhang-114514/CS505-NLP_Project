@@ -1,0 +1,15 @@
+{
+  "script": "build_squad_data.py",
+  "split": "validation",
+  "sample_size": 2000,
+  "output_qa_path": "data/qa/squad_validation_qa_2000_rerun_rtmeta_20260420_150724.json",
+  "output_corpus_path": "data/corpus/squad_validation_corpus_2000_rerun_rtmeta_20260420_150724.json",
+  "num_qa_examples": 2000,
+  "num_corpus_docs": 315,
+  "build_started_at": "2026-04-20T19:07:25.031000+00:00",
+  "build_finished_at": "2026-04-20T19:07:27.083677+00:00",
+  "total_runtime_sec": 2.05269,
+  "python_version": "3.13.7",
+  "platform": "macOS-15.7.3-arm64-arm-64bit-Mach-O",
+  "hostname": "MacBook-Pro-3.local"
+}
