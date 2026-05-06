@@ -88,7 +88,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Note: `requirements.txt` currently contains duplicate lines from iterative development. It still installs correctly, but you may want to deduplicate it later.
+Bounds such as `numpy<2` and `aiohttp<3.10` are pinned for resolver compatibility across the stack above.
 
 ## End-to-End Workflow
 

@@ -1,27 +1,23 @@
+# Core ML / generation
+accelerate
+sentencepiece
 torch
 transformers
-sentencepiece
-accelerate
+
+# Retrieval & vector store
 rank-bm25
-datasets
-wikipedia
-sentence-transformers
-numpy<2
 qdrant-client
+sentence-transformers
+
+# Datasets & external text
 aiohttp<3.10
-python-dotenv
-wikipedia>=1.4.0
-python-dotenv
-qdrant-client
-sentence-transformers
 datasets
-wikipedia
-sentence-transformers
-qdrant-client
+wikipedia>=1.4.0
+
+# Experiment config / env
 python-dotenv
-rank-bm25
+
+# Chunking analysis & preprocessing
+numpy<2
 nltk
 scikit-learn
-numpy
-transformers
-torch
