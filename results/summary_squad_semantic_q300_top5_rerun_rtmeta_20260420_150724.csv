@@ -1,0 +1,6 @@
+avg_answer_containment,avg_chunk_len,avg_em,avg_example_time_sec,avg_f1,avg_generation_time_sec,avg_retrieval_time_sec,containment_count,containment_total,coverage_count,coverage_rate,coverage_total,hit_count,hit_rate,hit_total,max_chunk_len,median_chunk_len,min_chunk_len,num_chunks,section,setup_time_sec,total_runtime_sec
+,23.97,,,,,,,,,,,,,,229,22,1,4417,chunk_stats,,
+,,,,,,,,,291,0.97,300,,,,,,,,coverage,,
+,,,,,,,,,,,,245,0.8166666666666667,300,,,,,retrieval,,
+0.5933333333333334,,0.6133333333333333,,0.6512380952380952,,,178,300,,,,,,,,,,,final_metrics,,
+,,,0.12256,,0.11015,0.012409,,,,,,,,,,,,,runtime,2.115795,38.911866

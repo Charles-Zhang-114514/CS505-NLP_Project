@@ -1,0 +1,5156 @@
+{
+  "mode": "closed_book",
+  "qa_dataset": "squad",
+  "qa_split": "validation",
+  "num_questions": 300,
+  "qa_sample_size": 5000,
+  "corpus_path": null,
+  "corpus_doc_count": null,
+  "top_k": 5,
+  "embedding_model": null,
+  "generator_type": "simple",
+  "generator_model": "google/flan-t5-base",
+  "avg_exact_match": 0.04,
+  "avg_f1": 0.07890040758461811,
+  "avg_answer_containment": 0.04,
+  "total_runtime_sec": 60.361084,
+  "avg_example_time_sec": 0.197662,
+  "avg_retrieval_time_sec": 1e-06,
+  "avg_generation_time_sec": 0.19766,
+  "runtime": {
+    "run_started_at": "2026-05-04T05:20:18.134175+00:00",
+    "run_finished_at": "2026-05-04T05:21:18.495260+00:00",
+    "setup_time_sec": 0.984471,
+    "total_runtime_sec": 60.361084,
+    "avg_example_time_sec": 0.197662,
+    "avg_retrieval_time_sec": 1e-06,
+    "avg_generation_time_sec": 0.19766
+  },
+  "environment": {
+    "python_version": "3.14.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "hostname": "DESKTOP-JG6JDSD",
+    "device": "cpu"
+  },
+  "experiment_config": {
+    "qa_dataset": "squad",
+    "qa_split": "validation",
+    "qa_path": "data/qa/squad_validation_qa_5000_rerun_rtmeta_20260420_150724.json",
+    "qa_sample_size": 5000,
+    "corpus_path": null,
+    "corpus_doc_count": null,
+    "num_questions": 300,
+    "mode": "closed_book",
+    "top_k": 5,
+    "chunks_path": null,
+    "embeddings_path": null,
+    "collection_name": null,
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "generator_type": "simple",
+    "generator_model": "google/flan-t5-base",
+    "max_new_tokens": 64,
+    "corpus_name": null,
+    "chunking": null,
+    "seed": 42
+  },
+  "results": [
+    {
+      "index": 1,
+      "query": "Which NFL team represented the AFC at Super Bowl 50?",
+      "gold_answers": [
+        "Denver Broncos",
+        "Denver Broncos",
+        "Denver Broncos"
+      ],
+      "prediction": "alabama rams",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.532187,
+      "example_time_sec": 0.532191,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 2,
+      "query": "Which NFL team represented the NFC at Super Bowl 50?",
+      "gold_answers": [
+        "Carolina Panthers",
+        "Carolina Panthers",
+        "Carolina Panthers"
+      ],
+      "prediction": "st louis cardinals",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.343342,
+      "example_time_sec": 0.343345,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 3,
+      "query": "Where did Super Bowl 50 take place?",
+      "gold_answers": [
+        "Santa Clara, California",
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara, California."
+      ],
+      "prediction": "New Orleans, Louisiana",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.210442,
+      "example_time_sec": 0.210445,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 4,
+      "query": "Which NFL team won Super Bowl 50?",
+      "gold_answers": [
+        "Denver Broncos",
+        "Denver Broncos",
+        "Denver Broncos"
+      ],
+      "prediction": "san francisco 49ers",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.345497,
+      "example_time_sec": 0.3455,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 5,
+      "query": "What color was used to emphasize the 50th anniversary of the Super Bowl?",
+      "gold_answers": [
+        "gold",
+        "gold",
+        "gold"
+      ],
+      "prediction": "red",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.099524,
+      "example_time_sec": 0.099526,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 6,
+      "query": "What was the theme of Super Bowl 50?",
+      "gold_answers": [
+        "\"golden anniversary\"",
+        "gold-themed",
+        "\"golden anniversary"
+      ],
+      "prediction": "a sailor in a hat",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.444234,
+      "example_time_sec": 0.444236,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 7,
+      "query": "What day was the game played on?",
+      "gold_answers": [
+        "February 7, 2016",
+        "February 7",
+        "February 7, 2016"
+      ],
+      "prediction": "September 11, 2001",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.179932,
+      "example_time_sec": 0.179934,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 8,
+      "query": "What is the AFC short for?",
+      "gold_answers": [
+        "American Football Conference",
+        "American Football Conference",
+        "American Football Conference"
+      ],
+      "prediction": "football",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.096327,
+      "example_time_sec": 0.096329,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 9,
+      "query": "What was the theme of Super Bowl 50?",
+      "gold_answers": [
+        "\"golden anniversary\"",
+        "gold-themed",
+        "gold"
+      ],
+      "prediction": "a sailor in a hat",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.454152,
+      "example_time_sec": 0.454154,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 10,
+      "query": "What does AFC stand for?",
+      "gold_answers": [
+        "American Football Conference",
+        "American Football Conference",
+        "American Football Conference"
+      ],
+      "prediction": "AFC",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.140828,
+      "example_time_sec": 0.14083,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 11,
+      "query": "What day was the Super Bowl played on?",
+      "gold_answers": [
+        "February 7, 2016",
+        "February 7",
+        "February 7, 2016"
+      ],
+      "prediction": "November 7, 2008",
+      "exact_match": 0,
+      "f1_score": 0.4,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.173316,
+      "example_time_sec": 0.173317,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 12,
+      "query": "Who won Super Bowl 50?",
+      "gold_answers": [
+        "Denver Broncos",
+        "Denver Broncos",
+        "Denver Broncos"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.204464,
+      "example_time_sec": 0.204466,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 13,
+      "query": "What venue did Super Bowl 50 take place in?",
+      "gold_answers": [
+        "Levi's Stadium",
+        "Levi's Stadium",
+        "Levi's Stadium in the San Francisco Bay Area at Santa Clara"
+      ],
+      "prediction": "New Orleans Saints Stadium",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.257306,
+      "example_time_sec": 0.257308,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 14,
+      "query": "What city did Super Bowl 50 take place in?",
+      "gold_answers": [
+        "Santa Clara",
+        "Santa Clara",
+        "Santa Clara"
+      ],
+      "prediction": "New Orleans",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.142135,
+      "example_time_sec": 0.142137,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 15,
+      "query": "If Roman numerals were used, what would Super Bowl 50 have been called?",
+      "gold_answers": [
+        "Super Bowl L",
+        "L",
+        "Super Bowl L"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.204927,
+      "example_time_sec": 0.204929,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 16,
+      "query": "Super Bowl 50 decided the NFL champion for what season?",
+      "gold_answers": [
+        "2015",
+        "the 2015 season",
+        "2015"
+      ],
+      "prediction": "2008",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.098874,
+      "example_time_sec": 0.098877,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 17,
+      "query": "What year did the Denver Broncos secure a Super Bowl title for the third time?",
+      "gold_answers": [
+        "2015",
+        "2016",
+        "2015"
+      ],
+      "prediction": "2007",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.126776,
+      "example_time_sec": 0.126779,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 18,
+      "query": "What city did Super Bowl 50 take place in?",
+      "gold_answers": [
+        "Santa Clara",
+        "Santa Clara",
+        "Santa Clara"
+      ],
+      "prediction": "New Orleans",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.137641,
+      "example_time_sec": 0.137644,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 19,
+      "query": "What stadium did Super Bowl 50 take place in?",
+      "gold_answers": [
+        "Levi's Stadium",
+        "Levi's Stadium",
+        "Levi's Stadium"
+      ],
+      "prediction": "Super Bowl XXX",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.285668,
+      "example_time_sec": 0.28567,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 20,
+      "query": "What was the final score of Super Bowl 50?",
+      "gold_answers": [
+        "24–10",
+        "24–10",
+        "24–10"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.137522,
+      "example_time_sec": 0.137525,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 21,
+      "query": "What month, day and year did Super Bowl 50 take place?",
+      "gold_answers": [
+        "February 7, 2016",
+        "February 7, 2016",
+        "February 7, 2016"
+      ],
+      "prediction": "june",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.175406,
+      "example_time_sec": 0.175409,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 22,
+      "query": "What year was Super Bowl 50?",
+      "gold_answers": [
+        "2015",
+        "2016",
+        "2016"
+      ],
+      "prediction": "1970",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.103034,
+      "example_time_sec": 0.103036,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 23,
+      "query": "What team was the AFC champion?",
+      "gold_answers": [
+        "Denver Broncos",
+        "Denver Broncos",
+        "Denver Broncos"
+      ],
+      "prediction": "New York Giants",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.219865,
+      "example_time_sec": 0.219867,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 24,
+      "query": "What team was the NFC champion?",
+      "gold_answers": [
+        "Carolina Panthers",
+        "Carolina Panthers",
+        "Carolina Panthers"
+      ],
+      "prediction": "New England Patriots",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.218572,
+      "example_time_sec": 0.218574,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 25,
+      "query": "Who won Super Bowl 50?",
+      "gold_answers": [
+        "Denver Broncos",
+        "Denver Broncos",
+        "Denver Broncos"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.226393,
+      "example_time_sec": 0.226395,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 26,
+      "query": "Super Bowl 50 determined the NFL champion for what season?",
+      "gold_answers": [
+        "2015",
+        "the 2015 season",
+        "2015"
+      ],
+      "prediction": "2008",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.100678,
+      "example_time_sec": 0.10068,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 27,
+      "query": "Which team won Super Bowl 50.",
+      "gold_answers": [
+        "Denver Broncos",
+        "Denver Broncos",
+        "Denver Broncos"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.208619,
+      "example_time_sec": 0.208621,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 28,
+      "query": "Where was Super Bowl 50 held?",
+      "gold_answers": [
+        "Santa Clara, California.",
+        "Levi's Stadium",
+        "Levi's Stadium"
+      ],
+      "prediction": "New Orleans, Louisiana",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.207041,
+      "example_time_sec": 0.207044,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 29,
+      "query": "The name of the NFL championship game is?",
+      "gold_answers": [
+        "Super Bowl",
+        "Super Bowl",
+        "Super Bowl"
+      ],
+      "prediction": "nfl championship game",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.281515,
+      "example_time_sec": 0.281518,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 30,
+      "query": "What 2015 NFL team one the AFC playoff?",
+      "gold_answers": [
+        "Denver Broncos",
+        "Denver Broncos",
+        "Denver Broncos"
+      ],
+      "prediction": "New Orleans Saints",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.206028,
+      "example_time_sec": 0.206031,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 31,
+      "query": "Which Carolina Panthers player was named Most Valuable Player?",
+      "gold_answers": [
+        "Cam Newton",
+        "Cam Newton",
+        "Cam Newton"
+      ],
+      "prediction": "mike scott",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.284038,
+      "example_time_sec": 0.284041,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 32,
+      "query": "How many appearances have the Denver Broncos made in the Super Bowl?",
+      "gold_answers": [
+        "8",
+        "eight",
+        "eight"
+      ],
+      "prediction": "ten",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.137696,
+      "example_time_sec": 0.137698,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 33,
+      "query": "What year was the Carolina Panthers franchise founded?",
+      "gold_answers": [
+        "1995",
+        "1995",
+        "1995"
+      ],
+      "prediction": "1876",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.138961,
+      "example_time_sec": 0.138963,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 34,
+      "query": "What team did the Panthers defeat?",
+      "gold_answers": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals",
+        "Arizona Cardinals"
+      ],
+      "prediction": "New Orleans Saints",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.208614,
+      "example_time_sec": 0.208616,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 35,
+      "query": "Who did the Broncos prevent from going to the Super Bowl?",
+      "gold_answers": [
+        "New England Patriots",
+        "the New England Patriots",
+        "New England Patriots"
+      ],
+      "prediction": "frankfurt",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.246756,
+      "example_time_sec": 0.246759,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 36,
+      "query": "Who did the Panthers beat in the NFC Championship Game?",
+      "gold_answers": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals",
+        "Arizona Cardinals"
+      ],
+      "prediction": "Atlanta Falcons",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.168873,
+      "example_time_sec": 0.168875,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 37,
+      "query": "Who lost to the Broncos in the AFC Championship?",
+      "gold_answers": [
+        "New England Patriots",
+        "the New England Patriots",
+        "New England Patriots"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.22259,
+      "example_time_sec": 0.222593,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 38,
+      "query": "Who were the defending Super Bowl champions?",
+      "gold_answers": [
+        "New England Patriots",
+        "the New England Patriots",
+        "New England Patriots"
+      ],
+      "prediction": "the nfl",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.24497,
+      "example_time_sec": 0.244972,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 39,
+      "query": "How many teams have been in the Super Bowl eight times?",
+      "gold_answers": [
+        "four",
+        "four",
+        "four"
+      ],
+      "prediction": "eight",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.107024,
+      "example_time_sec": 0.107026,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 40,
+      "query": "Who was this season's NFL MVP?",
+      "gold_answers": [
+        "Cam Newton",
+        "Cam Newton",
+        "Cam Newton"
+      ],
+      "prediction": "antonio jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.33708,
+      "example_time_sec": 0.337082,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 41,
+      "query": "What was the win/loss ratio in 2015 for the Carolina Panthers during their regular season?",
+      "gold_answers": [
+        "15–1",
+        "15–1",
+        "15–1"
+      ],
+      "prediction": "0–0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.207182,
+      "example_time_sec": 0.207185,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 42,
+      "query": "Which Carolina Panthers team member was picked as the team's MVP in 2015?",
+      "gold_answers": [
+        "Cam Newton",
+        "Cam Newton",
+        "Cam Newton"
+      ],
+      "prediction": "Jeremy Maclin",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.237016,
+      "example_time_sec": 0.237019,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 43,
+      "query": "What were the win/loss game stats for the Denver Bronco's regular season in 2015?",
+      "gold_answers": [
+        "12–4",
+        "12–4",
+        "12–4"
+      ],
+      "prediction": "0–0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.210703,
+      "example_time_sec": 0.210705,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 44,
+      "query": "How many teams have played in the Super Bowl eight times?",
+      "gold_answers": [
+        "4",
+        "four",
+        "four"
+      ],
+      "prediction": "eight",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.098742,
+      "example_time_sec": 0.098744,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 45,
+      "query": "Which team did not get a chance to defend their Super Bowl XLIX win in Super Bowl 50?",
+      "gold_answers": [
+        "New England Patriots",
+        "the New England Patriots",
+        "New England Patriots"
+      ],
+      "prediction": "the nfl",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.233927,
+      "example_time_sec": 0.233929,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 46,
+      "query": "Who is the quarterback for the Panthers?",
+      "gold_answers": [
+        "Cam Newton",
+        "Cam Newton",
+        "Cam Newton"
+      ],
+      "prediction": "Jason Campbell",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.125726,
+      "example_time_sec": 0.125728,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 47,
+      "query": "Who did Carolina beat in the NFC championship game?",
+      "gold_answers": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals",
+        "Arizona Cardinals"
+      ],
+      "prediction": "Atlanta Falcons",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.169311,
+      "example_time_sec": 0.169313,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 48,
+      "query": "How many times have the Panthers been in the Super Bowl?",
+      "gold_answers": [
+        "2",
+        "second",
+        "second"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.099524,
+      "example_time_sec": 0.099527,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 49,
+      "query": "Who did Denver beat in the AFC championship?",
+      "gold_answers": [
+        "New England Patriots",
+        "the New England Patriots",
+        "New England Patriots"
+      ],
+      "prediction": "Denver Broncos",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.240205,
+      "example_time_sec": 0.240207,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 50,
+      "query": "Who was the Most Valuable Player for the 2015 NFL season?",
+      "gold_answers": [
+        "Cam Newton",
+        "Cam Newton",
+        "Cam Newton"
+      ],
+      "prediction": "antonio jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.354438,
+      "example_time_sec": 0.35444,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 51,
+      "query": "Who did Denver beat in the 2015 AFC Championship game?",
+      "gold_answers": [
+        "New England Patriots",
+        "the New England Patriots",
+        "New England Patriots"
+      ],
+      "prediction": "Denver Broncos",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.237333,
+      "example_time_sec": 0.237335,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 52,
+      "query": "Who did the Carolina Panthers beat in the 2015 NFC Championship game?",
+      "gold_answers": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals",
+        "Arizona Cardinals"
+      ],
+      "prediction": "Atlanta Falcons",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.167703,
+      "example_time_sec": 0.167705,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 53,
+      "query": "Who was the 2015 NFL MVP?",
+      "gold_answers": [
+        "Cam Newton",
+        "Cam Newton",
+        "Cam Newton"
+      ],
+      "prediction": "antonio jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.352583,
+      "example_time_sec": 0.352585,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 54,
+      "query": "Who did the Panthers beat to become the NFC champs?",
+      "gold_answers": [
+        "Arizona Cardinals",
+        "the Arizona Cardinals",
+        "Arizona Cardinals"
+      ],
+      "prediction": "the Raiders",
+      "exact_match": 0,
+      "f1_score": 0.4,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.207438,
+      "example_time_sec": 0.20744,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 55,
+      "query": "What year did the Carolina Panthers form?",
+      "gold_answers": [
+        "1995.",
+        "1995",
+        "1995"
+      ],
+      "prediction": "1976",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.094462,
+      "example_time_sec": 0.094464,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 56,
+      "query": "Who was the Super Bowl 50 MVP?",
+      "gold_answers": [
+        "Von Miller",
+        "Von Miller",
+        "Miller"
+      ],
+      "prediction": "jimmy carter",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.2595,
+      "example_time_sec": 0.259502,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 57,
+      "query": "How many fumbles did Von Miller force in Super Bowl 50?",
+      "gold_answers": [
+        "2",
+        "two",
+        "two"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.101811,
+      "example_time_sec": 0.101813,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 58,
+      "query": "Which team held the scoring lead throughout the entire game?",
+      "gold_answers": [
+        "Broncos",
+        "The Broncos",
+        "Broncos"
+      ],
+      "prediction": "the Raiders",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.221588,
+      "example_time_sec": 0.22159,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 59,
+      "query": "Which Denver linebacker was named Super Bowl MVP?",
+      "gold_answers": [
+        "linebacker Von Miller",
+        "Von Miller",
+        "Miller"
+      ],
+      "prediction": "mike stubbs",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.351497,
+      "example_time_sec": 0.351499,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 60,
+      "query": "How many solo tackles did Von Miller make at Super Bowl 50?",
+      "gold_answers": [
+        "five solo tackles",
+        "five",
+        "five"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.125972,
+      "example_time_sec": 0.125974,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 61,
+      "query": "Who was limited by Denver's defense?",
+      "gold_answers": [
+        "Newton was limited by Denver's defense",
+        "Newton",
+        "Newton"
+      ],
+      "prediction": "Jeremy Hill",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.165407,
+      "example_time_sec": 0.165408,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 62,
+      "query": "How many times was Cam Newton sacked?",
+      "gold_answers": [
+        "seven",
+        "seven",
+        "seven"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.097136,
+      "example_time_sec": 0.097138,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 63,
+      "query": "Who won the Super Bowl MVP?",
+      "gold_answers": [
+        "Von Miller",
+        "The Broncos",
+        "Miller"
+      ],
+      "prediction": "jimmy carter",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.257436,
+      "example_time_sec": 0.257437,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 64,
+      "query": "How many turnovers did Cam Newton have?",
+      "gold_answers": [
+        "three",
+        "three",
+        "three"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.141452,
+      "example_time_sec": 0.141454,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 65,
+      "query": "How many fumbles did Von Miller force?",
+      "gold_answers": [
+        "two",
+        "two",
+        "two"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.109967,
+      "example_time_sec": 0.10997,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 66,
+      "query": "Who was given the esteemed status of MVP for Super Bowl 50?",
+      "gold_answers": [
+        "Von Miller",
+        "Von Miller",
+        "Miller"
+      ],
+      "prediction": "mike stubbs",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.346182,
+      "example_time_sec": 0.346184,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 67,
+      "query": "What position does Von Miller play for the Denver Broncos?",
+      "gold_answers": [
+        "linebacker",
+        "linebacker",
+        "linebacker"
+      ],
+      "prediction": "wide receiver",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.141351,
+      "example_time_sec": 0.141354,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 68,
+      "query": "What was the number of solo tackles that Von Miller had in Super Bowl 50?",
+      "gold_answers": [
+        "5",
+        "five",
+        "five"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.112343,
+      "example_time_sec": 0.112345,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 69,
+      "query": "How many forced fumbles did Von Miller have during the Super Bowl 50 game?",
+      "gold_answers": [
+        "2",
+        "two",
+        "two"
+      ],
+      "prediction": "2",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.103929,
+      "example_time_sec": 0.103932,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 70,
+      "query": "Who won the MVP for the Super Bowl?",
+      "gold_answers": [
+        "Von Miller",
+        "Von Miller",
+        "Von Miller"
+      ],
+      "prediction": "aaron taylor",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.373637,
+      "example_time_sec": 0.373639,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 71,
+      "query": "How many tackles did Von Miller get during the game?",
+      "gold_answers": [
+        "5",
+        "five",
+        "five"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.097291,
+      "example_time_sec": 0.097293,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 72,
+      "query": "How many times was Cam Newton sacked in Super Bowl 50?",
+      "gold_answers": [
+        "seven",
+        "seven",
+        "seven"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.099476,
+      "example_time_sec": 0.099479,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 73,
+      "query": "How many times did the Denver defense force Newton into turnovers?",
+      "gold_answers": [
+        "three",
+        "three",
+        "three"
+      ],
+      "prediction": "three",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.113863,
+      "example_time_sec": 0.113865,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 74,
+      "query": "Which Newton turnover resulted in seven points for Denver?",
+      "gold_answers": [
+        "a fumble",
+        "a fumble",
+        "fumble"
+      ],
+      "prediction": "fumbled",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.227093,
+      "example_time_sec": 0.227095,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 75,
+      "query": "Who was the Most Valuable Player of Super Bowl 50?",
+      "gold_answers": [
+        "Von Miller",
+        "Von Miller",
+        "Von Miller"
+      ],
+      "prediction": "jimmy carter",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.265897,
+      "example_time_sec": 0.265898,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 76,
+      "query": "What position does Von Miller play?",
+      "gold_answers": [
+        "linebacker",
+        "linebacker",
+        "linebacker"
+      ],
+      "prediction": "defensive tackle",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.129367,
+      "example_time_sec": 0.129369,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 77,
+      "query": "How many times was the Panthers' quarterback sacked?",
+      "gold_answers": [
+        "seven",
+        "seven",
+        "seven"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.096596,
+      "example_time_sec": 0.096598,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 78,
+      "query": "How many times did the Broncos cause turnovers in the game?",
+      "gold_answers": [
+        "three",
+        "three",
+        "three"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.125833,
+      "example_time_sec": 0.125835,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 79,
+      "query": "What Denver player caused two fumbles for the Panthers?",
+      "gold_answers": [
+        "Von Miller",
+        "Von Miller",
+        "Von Miller"
+      ],
+      "prediction": "Michael Vick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.175129,
+      "example_time_sec": 0.175131,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 80,
+      "query": "How many tackles did Von Miller accomlish by himself in the game?",
+      "gold_answers": [
+        "five",
+        "five",
+        "five"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.138028,
+      "example_time_sec": 0.13803,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 81,
+      "query": "Which network broadcasted Super Bowl 50 in the U.S.?",
+      "gold_answers": [
+        "CBS",
+        "CBS",
+        "CBS"
+      ],
+      "prediction": "tv",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.170428,
+      "example_time_sec": 0.170429,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 82,
+      "query": "What was the average cost for a 30 second commercial during Super Bowl 50?",
+      "gold_answers": [
+        "$5 million",
+        "$5 million",
+        "$5 million"
+      ],
+      "prediction": "$45",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.146832,
+      "example_time_sec": 0.146834,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 83,
+      "query": "Which group headlined the Super Bowl 50 halftime show?",
+      "gold_answers": [
+        "Coldplay",
+        "Coldplay",
+        "Coldplay"
+      ],
+      "prediction": "saxophone",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.284314,
+      "example_time_sec": 0.284316,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 84,
+      "query": "Which performers joined the headliner during the Super Bowl 50 halftime show?",
+      "gold_answers": [
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars"
+      ],
+      "prediction": "Freddie Mercury and The Weeknd",
+      "exact_match": 0,
+      "f1_score": 0.22222222222222224,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.316523,
+      "example_time_sec": 0.316526,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 85,
+      "query": "At which Super Bowl did Beyonce headline the halftime show?",
+      "gold_answers": [
+        "Super Bowl XLVII",
+        "Super Bowl XLVII",
+        "XLVII"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.203215,
+      "example_time_sec": 0.203217,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 86,
+      "query": "Who was the broadcaster for Super Bowl 50 in the United States?",
+      "gold_answers": [
+        "CBS",
+        "CBS",
+        "CBS"
+      ],
+      "prediction": "bobby scott",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.274704,
+      "example_time_sec": 0.274706,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 87,
+      "query": "What was the average cost of a 30-second commercial?",
+      "gold_answers": [
+        "$5 million",
+        "$5 million",
+        "$5 million"
+      ],
+      "prediction": "$45",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.144382,
+      "example_time_sec": 0.144385,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 88,
+      "query": "What halftime performer previously headlined Super Bowl XLVII?",
+      "gold_answers": [
+        "Beyoncé",
+        "Beyoncé",
+        "Beyoncé"
+      ],
+      "prediction": "bobby jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.273808,
+      "example_time_sec": 0.273811,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 89,
+      "query": "What halftime performer previously headlined Super Bowl XLVIII?",
+      "gold_answers": [
+        "Bruno Mars",
+        "Bruno Mars",
+        "Mars"
+      ],
+      "prediction": "bobby jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.274196,
+      "example_time_sec": 0.274199,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 90,
+      "query": "Who was the main performer at this year's halftime show?",
+      "gold_answers": [
+        "Coldplay",
+        "Coldplay",
+        "Coldplay"
+      ],
+      "prediction": "Justin Timberlake",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.187388,
+      "example_time_sec": 0.18739,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 91,
+      "query": "Which network broadcasted the 50th Super Bowl game?",
+      "gold_answers": [
+        "CBS",
+        "CBS",
+        "CBS"
+      ],
+      "prediction": "tv",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.18689,
+      "example_time_sec": 0.186892,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 92,
+      "query": "What was the average cost for a TV ad lasting 30 seconds during Super Bowl 50?",
+      "gold_answers": [
+        "$5 million",
+        "$5 million",
+        "$5 million"
+      ],
+      "prediction": "$45",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.123959,
+      "example_time_sec": 0.123961,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 93,
+      "query": "Who was the male singer who performed as a special guest during Super Bowl 50?",
+      "gold_answers": [
+        "Bruno Mars",
+        "Bruno Mars",
+        "Bruno Mars,"
+      ],
+      "prediction": "bobby jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.283162,
+      "example_time_sec": 0.283164,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 94,
+      "query": "What ranking does the Super Bowl 50 halftime show have on the list of most watched TV broadcasts?",
+      "gold_answers": [
+        "third",
+        "third",
+        "third"
+      ],
+      "prediction": "highest-rated",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.176337,
+      "example_time_sec": 0.176339,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 95,
+      "query": "What station aired the Super Bowl?",
+      "gold_answers": [
+        "CBS",
+        "CBS",
+        "CBS"
+      ],
+      "prediction": "nbc",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.189488,
+      "example_time_sec": 0.189491,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 96,
+      "query": "How much money did a 1/2 minute commercial cost?",
+      "gold_answers": [
+        "$5 million",
+        "$5 million",
+        "$5 million"
+      ],
+      "prediction": "$1.5 million",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.167252,
+      "example_time_sec": 0.167254,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 97,
+      "query": "What band headlined half-time during Super Bowl 50?",
+      "gold_answers": [
+        "Coldplay",
+        "Coldplay",
+        "Coldplay"
+      ],
+      "prediction": "emo",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.221805,
+      "example_time_sec": 0.221808,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 98,
+      "query": "What two artists came out with Coldplay during the half-time show?",
+      "gold_answers": [
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars"
+      ],
+      "prediction": "emi & scott scott",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.491286,
+      "example_time_sec": 0.491288,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 99,
+      "query": "Who broadcast the Super Bowl on TV?",
+      "gold_answers": [
+        "CBS",
+        "CBS",
+        "CBS"
+      ],
+      "prediction": "tv",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.182896,
+      "example_time_sec": 0.182899,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 100,
+      "query": "Who headlined the halftime show for Super Bowl 50?",
+      "gold_answers": [
+        "Coldplay",
+        "Coldplay",
+        "Coldplay"
+      ],
+      "prediction": "bobby jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.295821,
+      "example_time_sec": 0.295824,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 101,
+      "query": "Who were special guests for the Super Bowl halftime show?",
+      "gold_answers": [
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars"
+      ],
+      "prediction": "Bill Belichick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.194222,
+      "example_time_sec": 0.194225,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 102,
+      "query": "Which Super Bowl halftime show did Beyoncé headline?",
+      "gold_answers": [
+        "Super Bowl XLVII",
+        "Super Bowl XLVII",
+        "Super Bowl XLVII"
+      ],
+      "prediction": "oh my god",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.243763,
+      "example_time_sec": 0.243765,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 103,
+      "query": "What was the cost for a half minute ad?",
+      "gold_answers": [
+        "$5 million",
+        "$5 million",
+        "$5 million for a 30-second"
+      ],
+      "prediction": "$500,000",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.132569,
+      "example_time_sec": 0.132572,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 104,
+      "query": "Who lead the Super Bowl 50 halftime performance?",
+      "gold_answers": [
+        "Coldplay",
+        "Coldplay",
+        "Coldplay"
+      ],
+      "prediction": "frank sinatra",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.278408,
+      "example_time_sec": 0.278411,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 105,
+      "query": "What other two famous performers were part of the Super Bowl 50 halftime?",
+      "gold_answers": [
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars",
+        "Beyoncé and Bruno Mars"
+      ],
+      "prediction": "bobby jackson and bobby jackson",
+      "exact_match": 0,
+      "f1_score": 0.22222222222222224,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.531738,
+      "example_time_sec": 0.53174,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 106,
+      "query": "What performer lead the Super Bowl XLVIII halftime show?",
+      "gold_answers": [
+        "Bruno Mars",
+        "Coldplay",
+        "Coldplay"
+      ],
+      "prediction": "bobby jackson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.27343,
+      "example_time_sec": 0.273432,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 107,
+      "query": "Who was the NFL Commissioner in early 2012?",
+      "gold_answers": [
+        "Roger Goodell",
+        "Roger Goodell",
+        "Goodell"
+      ],
+      "prediction": "john mccain",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.261641,
+      "example_time_sec": 0.261643,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 108,
+      "query": "Which Super Bowl did Roger Goodell speak about?",
+      "gold_answers": [
+        "the 50th Super Bowl",
+        "the 50th",
+        "50th"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.191967,
+      "example_time_sec": 0.191968,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 109,
+      "query": "In what year did Roger Goodell call Super Bowl 50 'an important game for us as a league'?",
+      "gold_answers": [
+        "2012",
+        "2012",
+        "2012"
+      ],
+      "prediction": "1970",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.111688,
+      "example_time_sec": 0.11169,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 110,
+      "query": "Who is the Commissioner of the National Football League?",
+      "gold_answers": [
+        "Roger Goodell",
+        "Roger Goodell",
+        "Goodell"
+      ],
+      "prediction": "bobby mccarthy",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.385438,
+      "example_time_sec": 0.38544,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 111,
+      "query": "When did he make the quoted remarks about Super Bowl 50?",
+      "gold_answers": [
+        "early 2012",
+        "In early 2012",
+        "2012"
+      ],
+      "prediction": "November 7, 1966",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.175364,
+      "example_time_sec": 0.175365,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 112,
+      "query": "Who was the commissioner of the NFL in 2012?",
+      "gold_answers": [
+        "Roger Goodell",
+        "Roger Goodell",
+        "Goodell"
+      ],
+      "prediction": "bobby mccain",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.30691,
+      "example_time_sec": 0.306912,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 113,
+      "query": "Who if the commissioner of the NFL?",
+      "gold_answers": [
+        "Roger Goodell",
+        "Roger Goodell",
+        "Goodell"
+      ],
+      "prediction": "Bill Belichick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.204089,
+      "example_time_sec": 0.204091,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 114,
+      "query": "Who is the commissioner of the NFL?",
+      "gold_answers": [
+        "Roger Goodell",
+        "Roger Goodell",
+        "Goodell"
+      ],
+      "prediction": "Mike Tomlinson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.249745,
+      "example_time_sec": 0.249747,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 115,
+      "query": "In early 2012, Goodell said that Super Bowl 50 would be what?",
+      "gold_answers": [
+        "spectacular",
+        "an important game for us as a league",
+        "spectacular"
+      ],
+      "prediction": "a slam dunk",
+      "exact_match": 0,
+      "f1_score": 0.18181818181818182,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.385533,
+      "example_time_sec": 0.385535,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 116,
+      "query": "What one word did the NFL commissioner use to describe what Super Bowl 50 was intended to be?",
+      "gold_answers": [
+        "spectacular",
+        "spectacular",
+        "spectacular"
+      ],
+      "prediction": "a resounding success",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.326696,
+      "example_time_sec": 0.326699,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 117,
+      "query": "What year did Roger Goodell announce that Super Bowl 50 would be \"important\"?",
+      "gold_answers": [
+        "2012",
+        "2012",
+        "2012"
+      ],
+      "prediction": "1966",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.113758,
+      "example_time_sec": 0.11376,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 118,
+      "query": "Which Louisiana venue was one of three considered for Super Bowl 50?",
+      "gold_answers": [
+        "New Orleans' Mercedes-Benz Superdome",
+        "New Orleans' Mercedes-Benz Superdome",
+        "Mercedes-Benz Superdome"
+      ],
+      "prediction": "san antonio",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.380707,
+      "example_time_sec": 0.380709,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 119,
+      "query": "Which Florida venue was one of three considered for Super Bowl 50?",
+      "gold_answers": [
+        "Miami's Sun Life Stadium",
+        "Miami's Sun Life Stadium",
+        "Sun Life Stadium"
+      ],
+      "prediction": "san antonio",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.340947,
+      "example_time_sec": 0.340949,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 120,
+      "query": "Which California venue was one of three considered for Super Bowl 50?",
+      "gold_answers": [
+        "San Francisco Bay Area's Levi's Stadium",
+        "San Francisco Bay Area's Levi's Stadium",
+        "Levi's Stadium"
+      ],
+      "prediction": "san diego",
+      "exact_match": 0,
+      "f1_score": 0.25,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.248081,
+      "example_time_sec": 0.248083,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 121,
+      "query": "What venue in Miami was a candidate for the site of Super Bowl 50?",
+      "gold_answers": [
+        "Sun Life Stadium",
+        "Sun Life Stadium",
+        "Sun Life Stadium"
+      ],
+      "prediction": "san juan san juan",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.507949,
+      "example_time_sec": 0.507951,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 122,
+      "query": "What site is located in the San Francisco Bay Area?",
+      "gold_answers": [
+        "Levi's Stadium",
+        "Levi's Stadium",
+        "Levi's Stadium"
+      ],
+      "prediction": "San Francisco Bay Area",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.217301,
+      "example_time_sec": 0.217303,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 123,
+      "query": "What is the name of San Francisco's stadium when looked at as a possibility for Super Bowl 50?",
+      "gold_answers": [
+        "Levi's Stadium",
+        "Levi's Stadium",
+        "Levi's Stadium."
+      ],
+      "prediction": "san francisco",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.284471,
+      "example_time_sec": 0.284473,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 124,
+      "query": "What was the name of New Orleans' superdome at the time that Super Bowl 50 took place?",
+      "gold_answers": [
+        "Mercedes-Benz Superdome",
+        "Mercedes-Benz Superdome",
+        "Mercedes-Benz Superdome"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.225775,
+      "example_time_sec": 0.225778,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 125,
+      "query": "What was the given name of Miami's stadium at the time of Super Bowl 50?",
+      "gold_answers": [
+        "Sun Life Stadium",
+        "Sun Life Stadium",
+        "Sun Life Stadium"
+      ],
+      "prediction": "san diego chargers",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.315327,
+      "example_time_sec": 0.315329,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 126,
+      "query": "What three stadiums did the NFL decide between for the game?",
+      "gold_answers": [
+        "New Orleans' Mercedes-Benz Superdome, Miami's Sun Life Stadium, and the San Francisco Bay Area's Levi's Stadium",
+        "New Orleans' Mercedes-Benz Superdome, Miami's Sun Life Stadium, and the San Francisco Bay Area's Levi's Stadium.",
+        "New Orleans' Mercedes-Benz Superdome, Miami's Sun Life Stadium, and the San Francisco Bay Area's Levi's Stadium."
+      ],
+      "prediction": "New Orleans Saints",
+      "exact_match": 0,
+      "f1_score": 0.21052631578947367,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.202507,
+      "example_time_sec": 0.202509,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 127,
+      "query": "How many sites did the NFL narrow down Super Bowl 50's location to?",
+      "gold_answers": [
+        "three",
+        "three",
+        "three"
+      ],
+      "prediction": "three",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.107806,
+      "example_time_sec": 0.107808,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 128,
+      "query": "One of the sites, Merceds-Benz Superdome, is located where?",
+      "gold_answers": [
+        "New Orleans",
+        "New Orleans",
+        "New Orleans'"
+      ],
+      "prediction": "san francisco",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.280783,
+      "example_time_sec": 0.280785,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 129,
+      "query": "What is the name of the stadium in Miami that was considered?",
+      "gold_answers": [
+        "Sun Life Stadium",
+        "Sun Life Stadium",
+        "Sun Life Stadium"
+      ],
+      "prediction": "san juan san juan",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.468034,
+      "example_time_sec": 0.468035,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 130,
+      "query": "What was the third city that was considered?",
+      "gold_answers": [
+        "San Francisco",
+        "San Francisco",
+        "San Francisco Bay Area's"
+      ],
+      "prediction": "san juan",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.270242,
+      "example_time_sec": 0.270244,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 131,
+      "query": "What is the name of the stadium in San Francisco Bay Area?",
+      "gold_answers": [
+        "Levi's Stadium.",
+        "Levi's Stadium",
+        "Levi's Stadium."
+      ],
+      "prediction": "san francisco",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.289678,
+      "example_time_sec": 0.28968,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 132,
+      "query": "What Florida stadium was considered for Super Bowl 50?",
+      "gold_answers": [
+        "Sun Life Stadium",
+        "Sun Life Stadium",
+        "Sun Life Stadium"
+      ],
+      "prediction": "Miami Dolphins Stadium",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.194654,
+      "example_time_sec": 0.194657,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 133,
+      "query": "What New Orleans stadium was considered for Super Bowl 50?",
+      "gold_answers": [
+        "Mercedes-Benz Superdome",
+        "Mercedes-Benz Superdome",
+        "Mercedes-Benz Superdome,"
+      ],
+      "prediction": "san diego chargers",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.306016,
+      "example_time_sec": 0.306018,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 134,
+      "query": "What is the name of the stadium where Super Bowl 50 was played?",
+      "gold_answers": [
+        "Levi's Stadium.",
+        "Levi's Stadium",
+        "Levi's Stadium."
+      ],
+      "prediction": "nfl arena",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.249741,
+      "example_time_sec": 0.249743,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 135,
+      "query": "When were the two finalists for hosting Super Bowl 50 announced?",
+      "gold_answers": [
+        "October 16, 2012",
+        "October 16, 2012,",
+        "October 16, 2012"
+      ],
+      "prediction": "November 7, 2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.185264,
+      "example_time_sec": 0.185266,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 136,
+      "query": "How many times has the South Florida/Miami area hosted the Super Bowl?",
+      "gold_answers": [
+        "10",
+        "10",
+        "10"
+      ],
+      "prediction": "four",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.104838,
+      "example_time_sec": 0.10484,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 137,
+      "query": "What was the most recent Super Bowl hosted in the South Florida/Miami area?",
+      "gold_answers": [
+        "Super Bowl XLIV",
+        "Super Bowl XLIV",
+        "2010"
+      ],
+      "prediction": "Super Bowl XXXVI",
+      "exact_match": 0,
+      "f1_score": 0.6666666666666666,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.327036,
+      "example_time_sec": 0.327038,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 138,
+      "query": "When was the most recent Super Bowl hosted in the South Florida/Miami area?",
+      "gold_answers": [
+        "2010",
+        "2010",
+        "2010"
+      ],
+      "prediction": "Super Bowl XXXVII",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.360358,
+      "example_time_sec": 0.36036,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 139,
+      "query": "When did the San Francisco Bay area last host the Super Bowl?",
+      "gold_answers": [
+        "1985",
+        "1985",
+        "1985"
+      ],
+      "prediction": "2008",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.101475,
+      "example_time_sec": 0.101477,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 140,
+      "query": "What was the other finalist besides Levi's Stadium?",
+      "gold_answers": [
+        "Sun Life Stadium",
+        "Sun Life Stadium",
+        "Sun Life Stadium"
+      ],
+      "prediction": "a st. louis st. louis",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.576739,
+      "example_time_sec": 0.576741,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 141,
+      "query": "When were the finalists announced?",
+      "gold_answers": [
+        "October 16, 2012",
+        "October 16, 2012",
+        "October 16, 2012,"
+      ],
+      "prediction": "November 6, 2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.153543,
+      "example_time_sec": 0.153546,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 142,
+      "query": "In what venue did Super Bowl XIX take place?",
+      "gold_answers": [
+        "Stanford Stadium",
+        "Stanford Stadium",
+        "Stanford Stadium"
+      ],
+      "prediction": "New Orleans Saints Stadium",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.236721,
+      "example_time_sec": 0.236724,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 143,
+      "query": "On what date did the Florida legislature decide against the plan to renovate the Miami stadium?",
+      "gold_answers": [
+        "May 3, 2013",
+        "May 3, 2013",
+        "May 3, 2013"
+      ],
+      "prediction": "November 7, 2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.181807,
+      "example_time_sec": 0.18181,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 144,
+      "query": "In what year was the Super Bowl last held in the Miami/South Florida area?",
+      "gold_answers": [
+        "2010",
+        "2010",
+        "2010"
+      ],
+      "prediction": "2010",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.101054,
+      "example_time_sec": 0.101056,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 145,
+      "query": "How many times has a Super Bowl taken place at Miami's Sun Life Stadium?",
+      "gold_answers": [
+        "two",
+        "10",
+        "10"
+      ],
+      "prediction": "seven",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.103573,
+      "example_time_sec": 0.103575,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 146,
+      "query": "What was the last Super Bowl that took place at Sun Life Stadium in Miami?",
+      "gold_answers": [
+        "Super Bowl XLIV",
+        "Super Bowl XLIV",
+        "2010"
+      ],
+      "prediction": "Super Bowl XXXV",
+      "exact_match": 0,
+      "f1_score": 0.6666666666666666,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.313052,
+      "example_time_sec": 0.313054,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 147,
+      "query": "In 2012, how many stadiums were named as finalists for hosting Super Bowl 50 before the final stadium was chosen?",
+      "gold_answers": [
+        "two",
+        "two",
+        "two"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.110131,
+      "example_time_sec": 0.110134,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 148,
+      "query": "What was the entity that stepped in and caused Miami's Sun Life Stadium to no longer be in the running to host Super Bowl 50?",
+      "gold_answers": [
+        "Florida legislature",
+        "the Florida legislature",
+        "Florida legislature"
+      ],
+      "prediction": "the Miami Dolphins",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.226525,
+      "example_time_sec": 0.226527,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 149,
+      "query": "Prior to this consideration, when did San Francisco last host a Super Bowl?",
+      "gold_answers": [
+        "1985",
+        "1985",
+        "1985"
+      ],
+      "prediction": "2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.103321,
+      "example_time_sec": 0.103323,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 150,
+      "query": "What other city has hosted the Super Bowl ten times?",
+      "gold_answers": [
+        "New Orleans",
+        "New Orleans",
+        "New Orleans"
+      ],
+      "prediction": "san francisco",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.281742,
+      "example_time_sec": 0.281744,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 151,
+      "query": "What date were the top two stadium choices for Super Bowl 50 announced?",
+      "gold_answers": [
+        "October 16, 2012",
+        "October 16, 2012",
+        "October 16, 2012,"
+      ],
+      "prediction": "November 7, 2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.17183,
+      "example_time_sec": 0.171834,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 152,
+      "query": "How many times prios has the Sun Life Stadium had Super Bowls?",
+      "gold_answers": [
+        "10.",
+        "10",
+        "10 times"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.09617,
+      "example_time_sec": 0.096172,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 153,
+      "query": "What city is tied with Miami for hosting the Super Bowl?",
+      "gold_answers": [
+        "New Orleans",
+        "New Orleans",
+        "New Orleans"
+      ],
+      "prediction": "san francisco",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.273199,
+      "example_time_sec": 0.273201,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 154,
+      "query": "When was the last time San Francisco hosted a Super Bowl?",
+      "gold_answers": [
+        "1985",
+        "1985",
+        "1985"
+      ],
+      "prediction": "2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.107092,
+      "example_time_sec": 0.107095,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 155,
+      "query": "Who decided not to approve paying for renovations at Sun Life Stadium that the league wanted for them to do to host Super Bowl 50?",
+      "gold_answers": [
+        "Florida legislature",
+        "the Florida legislature",
+        "Florida legislature"
+      ],
+      "prediction": "the city of san francisco",
+      "exact_match": 0,
+      "f1_score": 0.25,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.410117,
+      "example_time_sec": 0.41012,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 156,
+      "query": "When was Levi's Stadium awarded the right to host Super Bowl 50?",
+      "gold_answers": [
+        "May 21, 2013",
+        "May 21, 2013",
+        "May 21, 2013,"
+      ],
+      "prediction": "November 26, 1967",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.169719,
+      "example_time_sec": 0.169721,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 157,
+      "query": "Who voted on the venue for Super Bowl 50?",
+      "gold_answers": [
+        "NFL owners",
+        "NFL owners",
+        "NFL owners"
+      ],
+      "prediction": "the NFL",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.141056,
+      "example_time_sec": 0.141057,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 158,
+      "query": "When did Lev's Stadium open?",
+      "gold_answers": [
+        "2014",
+        "in 2014",
+        "2014"
+      ],
+      "prediction": "1931",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.137855,
+      "example_time_sec": 0.137857,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 159,
+      "query": "How much did it cost to build Levi's Stadium?",
+      "gold_answers": [
+        "$1.2 billion",
+        "$1.2 billion",
+        "$1.2 billion"
+      ],
+      "prediction": "$1.5 billion",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.192906,
+      "example_time_sec": 0.192908,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 160,
+      "query": "What California city last hosted the Super Bowl?",
+      "gold_answers": [
+        "San Diego",
+        "San Diego",
+        "San Diego"
+      ],
+      "prediction": "san diego",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.260996,
+      "example_time_sec": 0.260998,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 161,
+      "query": "Where did the spring meetings of the NFL owners take place?",
+      "gold_answers": [
+        "Boston",
+        "in Boston",
+        "May 21, 2013"
+      ],
+      "prediction": "New Orleans, Louisiana",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.220092,
+      "example_time_sec": 0.220094,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 162,
+      "query": "On what date was Super Bowl 50 given to Levi's Stadium?",
+      "gold_answers": [
+        "May 21, 2013",
+        "May 21, 2013",
+        "May 21, 2013,"
+      ],
+      "prediction": "November 7, 1970",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.167077,
+      "example_time_sec": 0.167079,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 163,
+      "query": "How much did it cost to build Levi's Stadium?",
+      "gold_answers": [
+        "$1.2 billion",
+        "$1.2 billion",
+        "$1.2 billion"
+      ],
+      "prediction": "$1.5 billion",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.168744,
+      "example_time_sec": 0.168746,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 164,
+      "query": "Prior to Super Bowl 50, what was the last Super Bowl in California?",
+      "gold_answers": [
+        "Super Bowl XXXVII",
+        "Super Bowl XXXVII",
+        "XXXVII"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.205605,
+      "example_time_sec": 0.205607,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 165,
+      "query": "In what city did the last Super Bowl in California occur?",
+      "gold_answers": [
+        "San Diego",
+        "San Diego",
+        "San Diego"
+      ],
+      "prediction": "san diego",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.236806,
+      "example_time_sec": 0.236808,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 166,
+      "query": "What year did Levi's Stadium become fully approved to host Super Bowl 50?",
+      "gold_answers": [
+        "2013",
+        "2013",
+        "2013"
+      ],
+      "prediction": "2015",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.100717,
+      "example_time_sec": 0.100719,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 167,
+      "query": "When did Levi's stadium open to the public?",
+      "gold_answers": [
+        "2014",
+        "2014",
+        "2014"
+      ],
+      "prediction": "1892",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.143609,
+      "example_time_sec": 0.143612,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 168,
+      "query": "How much did it cost to build the stadium where Super Bowl 50 was played?",
+      "gold_answers": [
+        "$1.2 billion",
+        "$1.2 billion",
+        "$1.2 billion"
+      ],
+      "prediction": "$70 million",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.16047,
+      "example_time_sec": 0.160472,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 169,
+      "query": "What year did a Super Bowl play in the bay area around San Francisco, prior to Super Bowl 50?",
+      "gold_answers": [
+        "1985",
+        "1985",
+        "1985"
+      ],
+      "prediction": "1970",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.105517,
+      "example_time_sec": 0.10552,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 170,
+      "query": "Which Super Bowl was hosted in San Diego in 2003?",
+      "gold_answers": [
+        "Super Bowl XXXVII",
+        "Super Bowl XXXVII",
+        "XXXVII"
+      ],
+      "prediction": "nfl",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.222489,
+      "example_time_sec": 0.222492,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 171,
+      "query": "When was San Francisco voted to be the location for Super Bowl 50?",
+      "gold_answers": [
+        "May 21, 2013",
+        "May 21, 2013,",
+        "May 21, 2013"
+      ],
+      "prediction": "November 7, 1950",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.175399,
+      "example_time_sec": 0.175401,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 172,
+      "query": "When did Levi's Stadium open?",
+      "gold_answers": [
+        "2014",
+        "in 2014",
+        "2014"
+      ],
+      "prediction": "1931",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.141109,
+      "example_time_sec": 0.141111,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 173,
+      "query": "When was the last Super Bowl in California?",
+      "gold_answers": [
+        "2003",
+        "in 2003",
+        "2003"
+      ],
+      "prediction": "November 7, 2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.159883,
+      "example_time_sec": 0.159886,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 174,
+      "query": "Where was the meeting held when the NFL owners voted on the location for Super Bowl 50?",
+      "gold_answers": [
+        "Boston",
+        "in Boston",
+        "Boston"
+      ],
+      "prediction": "New Orleans, Louisiana",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.201663,
+      "example_time_sec": 0.201665,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 175,
+      "query": "When was Levi's Stadium picked for Super bowl 50?",
+      "gold_answers": [
+        "May 21, 2013",
+        "May 21, 2013",
+        "May 21, 2013"
+      ],
+      "prediction": "September 26, 2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.179796,
+      "example_time_sec": 0.179799,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 176,
+      "query": "When did Levi's Stadium open?",
+      "gold_answers": [
+        "2014.",
+        "in 2014",
+        "2014"
+      ],
+      "prediction": "1931",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.12597,
+      "example_time_sec": 0.125972,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 177,
+      "query": "How much did Levi's Stadium cost?",
+      "gold_answers": [
+        "$1.2 billion",
+        "$1.2 billion",
+        "$1.2 billion"
+      ],
+      "prediction": "$1.5 million",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.180222,
+      "example_time_sec": 0.180224,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 178,
+      "query": "When was the last time California hosted a Super Bowl?",
+      "gold_answers": [
+        "2003.",
+        "2003",
+        "2003"
+      ],
+      "prediction": "2017",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.111776,
+      "example_time_sec": 0.111779,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 179,
+      "query": "Who coached each Super Bowl 50 participant in their most recent Super Bowl appearance prior to Super Bowl 50?",
+      "gold_answers": [
+        "John Fox",
+        "John Fox",
+        "Fox"
+      ],
+      "prediction": "bobby scott",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.27992,
+      "example_time_sec": 0.279922,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 180,
+      "query": "How many NFL teams have finished the regular season with one loss?",
+      "gold_answers": [
+        "ten",
+        "ten",
+        "six"
+      ],
+      "prediction": "ten",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.130696,
+      "example_time_sec": 0.130698,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 181,
+      "query": "How many NFL teams have gone 15-1 in one season?",
+      "gold_answers": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "ten",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.134631,
+      "example_time_sec": 0.134633,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 182,
+      "query": "Which team in Super Bowl 50 had a 15-1 record?",
+      "gold_answers": [
+        "Carolina Panthers",
+        "The Carolina Panthers",
+        "Panthers"
+      ],
+      "prediction": "san francisco 49ers",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.369111,
+      "example_time_sec": 0.369114,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 183,
+      "query": "What was the last Super Bowl the Broncos participated in?",
+      "gold_answers": [
+        "Super Bowl XLVIII",
+        "Super Bowl XLVIII",
+        "XLVIII"
+      ],
+      "prediction": "Super Bowl XXXV",
+      "exact_match": 0,
+      "f1_score": 0.6666666666666666,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.332966,
+      "example_time_sec": 0.332969,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 184,
+      "query": "Who was the head coach of the Broncos in Super Bowl XLVIII?",
+      "gold_answers": [
+        "John Fox",
+        "John Fox",
+        "Fox"
+      ],
+      "prediction": "mike mccarthy",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.385608,
+      "example_time_sec": 0.38561,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 185,
+      "query": "What was the number of times the Denver Broncos played in a Super Bowl by the time they reached Super Bowl 50?",
+      "gold_answers": [
+        "eight",
+        "eight",
+        "eight"
+      ],
+      "prediction": "ten",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.136296,
+      "example_time_sec": 0.136298,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 186,
+      "query": "How many NFL teams have had only one loss by the end of a regular season?",
+      "gold_answers": [
+        "ten",
+        "ten",
+        "ten"
+      ],
+      "prediction": "seven",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.101228,
+      "example_time_sec": 0.10123,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 187,
+      "query": "What was the first Super Bowl that the Carolina Panthers played in?",
+      "gold_answers": [
+        "Super Bowl XXXVIII",
+        "Super Bowl XXXVIII",
+        "XXXVIII"
+      ],
+      "prediction": "Super Bowl XXXV",
+      "exact_match": 0,
+      "f1_score": 0.6666666666666666,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.321138,
+      "example_time_sec": 0.32114,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 188,
+      "query": "How many teams can boast a 15–1 regular season record?",
+      "gold_answers": [
+        "six",
+        "ten",
+        "ten"
+      ],
+      "prediction": "ten",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.130141,
+      "example_time_sec": 0.130143,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 189,
+      "query": "What seed was the Carolina Panthers?",
+      "gold_answers": [
+        "number one",
+        "number one",
+        "one"
+      ],
+      "prediction": "third",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.094321,
+      "example_time_sec": 0.094323,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 190,
+      "query": "What seed was the Denver Broncos?",
+      "gold_answers": [
+        "number one",
+        "number one",
+        "one"
+      ],
+      "prediction": "third",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.096048,
+      "example_time_sec": 0.09605,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 191,
+      "query": "Prior to Super Bowl 50, when were the Broncos last there?",
+      "gold_answers": [
+        "Super Bowl XLVIII",
+        "Super Bowl XLVIII",
+        "Super Bowl XLVIII"
+      ],
+      "prediction": "1924",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.143781,
+      "example_time_sec": 0.143783,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 192,
+      "query": "Prior to Super Bowl 50, when were the Carolina Panthers last there?",
+      "gold_answers": [
+        "Super Bowl XXXVIII.",
+        "Super Bowl XXXVIII",
+        "Super Bowl XXXVIII"
+      ],
+      "prediction": "2010",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.105517,
+      "example_time_sec": 0.105519,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 193,
+      "query": "How many teams have had a 15-1 record for the regular season?",
+      "gold_answers": [
+        "six",
+        "ten",
+        "ten"
+      ],
+      "prediction": "ten",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.140871,
+      "example_time_sec": 0.140873,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 194,
+      "query": "How many games did the Panthers lose in the regular season before Super Bowl 50?",
+      "gold_answers": [
+        "one",
+        "1",
+        "1"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.149036,
+      "example_time_sec": 0.149038,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 195,
+      "query": "How many teams up to Super Bowl 50 have been to the championship game eight times?",
+      "gold_answers": [
+        "four",
+        "four",
+        "four"
+      ],
+      "prediction": "eight",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.110021,
+      "example_time_sec": 0.110024,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 196,
+      "query": "Before Super Bowl 50, what was the coach's name that coached both teams for their last Super Bowl appearances?",
+      "gold_answers": [
+        "John Fox",
+        "John Fox",
+        "John Fox"
+      ],
+      "prediction": "john mccain",
+      "exact_match": 0,
+      "f1_score": 0.5,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.269095,
+      "example_time_sec": 0.269097,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 197,
+      "query": "Whic Carolina Panthers running back was waived?",
+      "gold_answers": [
+        "DeAngelo Williams",
+        "DeAngelo Williams",
+        "Williams"
+      ],
+      "prediction": "Michael Vick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.174124,
+      "example_time_sec": 0.174126,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 198,
+      "query": "Which Carolina Panthers wide receiver suffered a torn ACL before the season began?",
+      "gold_answers": [
+        "Kelvin Benjamin",
+        "Kelvin Benjamin",
+        "Benjamin"
+      ],
+      "prediction": "Michael Vick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.177679,
+      "example_time_sec": 0.177681,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 199,
+      "query": "How many teams have won 15 regular season games since the 16-game schedule was adopted?",
+      "gold_answers": [
+        "7",
+        "seventh",
+        "seventh"
+      ],
+      "prediction": "ten",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.140433,
+      "example_time_sec": 0.140436,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 200,
+      "query": "In what year did the NFL switch to a 16-game regular season?",
+      "gold_answers": [
+        "1978",
+        "1978",
+        "1978"
+      ],
+      "prediction": "2007",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.10592,
+      "example_time_sec": 0.105923,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 201,
+      "query": "Who had the best record in the NFC?",
+      "gold_answers": [
+        "Carolina Panthers",
+        "the Panthers",
+        "Carolina"
+      ],
+      "prediction": "the New England Patriots",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.2375,
+      "example_time_sec": 0.237503,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 202,
+      "query": "How many Panthers went to the Pro Bowl?",
+      "gold_answers": [
+        "Ten",
+        "Ten",
+        "Ten"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.094996,
+      "example_time_sec": 0.094999,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 203,
+      "query": "How many Panthers were designated All-Pro?",
+      "gold_answers": [
+        "eight",
+        "eight",
+        "eight"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.101729,
+      "example_time_sec": 0.101731,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 204,
+      "query": "What Panther tore his ACL in the preseason?",
+      "gold_answers": [
+        "Kelvin Benjamin",
+        "Kelvin Benjamin",
+        "Benjamin"
+      ],
+      "prediction": "Jeremy Hill",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.173833,
+      "example_time_sec": 0.173836,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 205,
+      "query": "What year did the league begin having schedules with 16 games in them?",
+      "gold_answers": [
+        "1978",
+        "1978",
+        "1978"
+      ],
+      "prediction": "1908",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.136793,
+      "example_time_sec": 0.136795,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 206,
+      "query": "What year did the the Saints hit a 13-0 record?",
+      "gold_answers": [
+        "2009",
+        "2009",
+        "2009"
+      ],
+      "prediction": "2007",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.108276,
+      "example_time_sec": 0.108279,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 207,
+      "query": "When did the Packers arrive at a record of 13-0?",
+      "gold_answers": [
+        "2011",
+        "2011",
+        "2011"
+      ],
+      "prediction": "2007",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.104836,
+      "example_time_sec": 0.104838,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 208,
+      "query": "What injury did the Carolina Panthers lose Kelvin Benjamin to during their preseason?",
+      "gold_answers": [
+        "torn ACL",
+        "a torn ACL",
+        "torn ACL"
+      ],
+      "prediction": "a broken rib",
+      "exact_match": 0,
+      "f1_score": 0.3333333333333333,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.248174,
+      "example_time_sec": 0.248177,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 209,
+      "query": "Which player did the Panthers lose to an ACL injury in a preseason game?",
+      "gold_answers": [
+        "Kelvin Benjamin",
+        "Kelvin Benjamin",
+        "Benjamin"
+      ],
+      "prediction": "Michael Vick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.167655,
+      "example_time_sec": 0.167659,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 210,
+      "query": "Which running back did the Panthers waive?",
+      "gold_answers": [
+        "DeAngelo Williams",
+        "DeAngelo Williams",
+        "Williams"
+      ],
+      "prediction": "Michael Vick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.173077,
+      "example_time_sec": 0.173079,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 211,
+      "query": "When did the NFL start their 16 game seasons?",
+      "gold_answers": [
+        "1978",
+        "1978",
+        "1978"
+      ],
+      "prediction": "September 11, 2001",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.170467,
+      "example_time_sec": 0.17047,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 212,
+      "query": "How many Panthers players were selected to the Pro Bowl?",
+      "gold_answers": [
+        "Ten",
+        "Ten",
+        "Ten"
+      ],
+      "prediction": "ten",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.132633,
+      "example_time_sec": 0.132635,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 213,
+      "query": "Which team had the best regular season in their history?",
+      "gold_answers": [
+        "Carolina Panthers",
+        "the Panthers",
+        "Carolina"
+      ],
+      "prediction": "New York Giants",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.21982,
+      "example_time_sec": 0.219822,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 214,
+      "query": "When did the league go from 15 to 16 games in the regular season?",
+      "gold_answers": [
+        "1978.",
+        "1978",
+        "1978"
+      ],
+      "prediction": "1924",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.132069,
+      "example_time_sec": 0.132072,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 215,
+      "query": "What team had the best start ever in the NFL?",
+      "gold_answers": [
+        "Carolina Panthers",
+        "the Panthers",
+        "Carolina"
+      ],
+      "prediction": "san francisco 49ers",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.36811,
+      "example_time_sec": 0.368113,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 216,
+      "query": "How many Panthers players were chosen for the 2015 season's Pro Bowl?",
+      "gold_answers": [
+        "Ten",
+        "Ten",
+        "Ten"
+      ],
+      "prediction": "ten",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.135972,
+      "example_time_sec": 0.135974,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 217,
+      "query": "How many Pro Bowlers were on the Panthers offense?",
+      "gold_answers": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.096323,
+      "example_time_sec": 0.096325,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 218,
+      "query": "How many total touchdowns did Cam Newton score?",
+      "gold_answers": [
+        "45",
+        "45",
+        "45"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.089372,
+      "example_time_sec": 0.089374,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 219,
+      "query": "How many interceptions did Cam Newton throw?",
+      "gold_answers": [
+        "10",
+        "10",
+        "10"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.099937,
+      "example_time_sec": 0.099939,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 220,
+      "query": "How many punts did Ted Ginn Jr. return?",
+      "gold_answers": [
+        "27",
+        "27",
+        "27"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.137699,
+      "example_time_sec": 0.137701,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 221,
+      "query": "Who started at tight end for the Panthers?",
+      "gold_answers": [
+        "Greg Olsen",
+        "Greg Olsen",
+        "Olsen"
+      ],
+      "prediction": "Jason Campbell",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.126405,
+      "example_time_sec": 0.126407,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 222,
+      "query": "What is the record number of touchdowns Cam Newton has had?",
+      "gold_answers": [
+        "45",
+        "45",
+        "45"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.137584,
+      "example_time_sec": 0.137586,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 223,
+      "query": "What is the best QB ranking that Cam Newton holds?",
+      "gold_answers": [
+        "99.4",
+        "99.4",
+        "99.4."
+      ],
+      "prediction": "TE",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.14363,
+      "example_time_sec": 0.143632,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 224,
+      "query": "What are the most passes that Greg Olsen has had?",
+      "gold_answers": [
+        "77 passes",
+        "77",
+        "77"
+      ],
+      "prediction": "57",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.147722,
+      "example_time_sec": 0.147725,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 225,
+      "query": "What position does Jerricho Cotchery play?",
+      "gold_answers": [
+        "receivers",
+        "receivers",
+        "receivers"
+      ],
+      "prediction": "defensive tackle",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.140515,
+      "example_time_sec": 0.140517,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 226,
+      "query": "Which Panthers RB scored 6 TDs in the 13 games leading up to Super Bowl 50?",
+      "gold_answers": [
+        "Jonathan Stewart",
+        "Jonathan Stewart",
+        "Jonathan Stewart"
+      ],
+      "prediction": "adam savage",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.323703,
+      "example_time_sec": 0.323705,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 227,
+      "query": "How many Offensive players from the Panthers were selected to play in the Pro Bowl?",
+      "gold_answers": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.098323,
+      "example_time_sec": 0.098326,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 228,
+      "query": "Who is the quarterback for the Carolina Panthers?",
+      "gold_answers": [
+        "Cam Newton",
+        "Cam Newton",
+        "Cam Newton"
+      ],
+      "prediction": "Jason Campbell",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.132657,
+      "example_time_sec": 0.13266,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 229,
+      "query": "How many yards did Newton throw for in 2015?",
+      "gold_answers": [
+        "3,837",
+        "3,837",
+        "3,837"
+      ],
+      "prediction": "57",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.13284,
+      "example_time_sec": 0.132842,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 230,
+      "query": "How many touchdowns did Newton have in 2015?",
+      "gold_answers": [
+        "45",
+        "45",
+        "45"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.146482,
+      "example_time_sec": 0.146484,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 231,
+      "query": "How many touchdowns did Jonathan Stewart have in 13 games?",
+      "gold_answers": [
+        "six",
+        "six",
+        "six"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.13512,
+      "example_time_sec": 0.135123,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 232,
+      "query": "How many points did Carolina lead the NFL in scoring for offensive plays?",
+      "gold_answers": [
+        "500",
+        "500",
+        "500"
+      ],
+      "prediction": "59",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.137426,
+      "example_time_sec": 0.137428,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 233,
+      "query": "how many yards did Newton get for passes in the 2015 season?",
+      "gold_answers": [
+        "3,837",
+        "3,837",
+        "3,837"
+      ],
+      "prediction": "69",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.138244,
+      "example_time_sec": 0.138247,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 234,
+      "query": "How many touchdowns did Newton get in the 2015 season?",
+      "gold_answers": [
+        "45",
+        "45",
+        "45"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.134809,
+      "example_time_sec": 0.134811,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 235,
+      "query": "What was Newton's quarterback rating for 2015?",
+      "gold_answers": [
+        "99.4.",
+        "99.4",
+        "99.4."
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.117644,
+      "example_time_sec": 0.117646,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 236,
+      "query": "How many receptions did Cotchery  get for the 2015 season?",
+      "gold_answers": [
+        "39",
+        "39",
+        "39"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.13642,
+      "example_time_sec": 0.136422,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 237,
+      "query": "How many points did the Panthers defense surrender?",
+      "gold_answers": [
+        "308",
+        "308",
+        "308"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.119163,
+      "example_time_sec": 0.119165,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 238,
+      "query": "How many career sacks did Jared Allen have?",
+      "gold_answers": [
+        "136",
+        "136",
+        "136"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.124521,
+      "example_time_sec": 0.124523,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 239,
+      "query": "How many tackles did Luke Kuechly register?",
+      "gold_answers": [
+        "118",
+        "118",
+        "118"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.124538,
+      "example_time_sec": 0.124541,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 240,
+      "query": "How many balls did Josh Norman intercept?",
+      "gold_answers": [
+        "four",
+        "four",
+        "four"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.103452,
+      "example_time_sec": 0.103454,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 241,
+      "query": "Who registered the most sacks on the team this season?",
+      "gold_answers": [
+        "Kawann Short",
+        "Kawann Short",
+        "Short"
+      ],
+      "prediction": "Bill Belichick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.206029,
+      "example_time_sec": 0.206031,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 242,
+      "query": "How many interceptions are the Panthers defense credited with in 2015?",
+      "gold_answers": [
+        "24",
+        "24",
+        "24"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.127845,
+      "example_time_sec": 0.127847,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 243,
+      "query": "Who led the Panthers in sacks?",
+      "gold_answers": [
+        "Kawann Short",
+        "Kawann Short",
+        "Short"
+      ],
+      "prediction": "Bill Belichick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.210008,
+      "example_time_sec": 0.210011,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 244,
+      "query": "How many Panthers defense players were selected for the Pro Bowl?",
+      "gold_answers": [
+        "four",
+        "four",
+        "four"
+      ],
+      "prediction": "four",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "answer_containment": 1,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.113373,
+      "example_time_sec": 0.113376,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 245,
+      "query": "How many forced fumbles did Thomas Davis have?",
+      "gold_answers": [
+        "four",
+        "5½",
+        "four"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.108017,
+      "example_time_sec": 0.108019,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 246,
+      "query": "Which player had the most interceptions for the season?",
+      "gold_answers": [
+        "Kurt Coleman",
+        "Kurt Coleman",
+        "Coleman"
+      ],
+      "prediction": "Bill Belichick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.208329,
+      "example_time_sec": 0.208332,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 247,
+      "query": "How many 2015 season interceptions did the Panthers' defense get?",
+      "gold_answers": [
+        "24",
+        "24",
+        "24"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.103841,
+      "example_time_sec": 0.103843,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 248,
+      "query": "Who had five sacks in nine games as a Carolina Panthers starter?",
+      "gold_answers": [
+        "Kony Ealy",
+        "Kony Ealy"
+      ],
+      "prediction": "Jeremy Maclin",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.221609,
+      "example_time_sec": 0.221611,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 249,
+      "query": "Who was the Panthers' tackle leader for 2015?",
+      "gold_answers": [
+        "Luke Kuechly.",
+        "Luke Kuechly",
+        "Short"
+      ],
+      "prediction": "Jeremy Maclin",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.203178,
+      "example_time_sec": 0.20318,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 250,
+      "query": "How many interceptions did Josh Norman score touchdowns with in 2015?",
+      "gold_answers": [
+        "two.",
+        "two",
+        "24"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.110406,
+      "example_time_sec": 0.110408,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 251,
+      "query": "Who is the head coach of the Broncos?",
+      "gold_answers": [
+        "Gary Kubiak",
+        "Gary Kubiak",
+        "Kubiak"
+      ],
+      "prediction": "Mike Tomlinson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.248598,
+      "example_time_sec": 0.2486,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 252,
+      "query": "Who played quarterback for the Broncos after Peyton Manning was benched?",
+      "gold_answers": [
+        "Brock Osweiler",
+        "Brock Osweiler",
+        "Osweiler"
+      ],
+      "prediction": "Bill Belichick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.204778,
+      "example_time_sec": 0.20478,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 253,
+      "query": "Who did Peyton Manning play for as a rookie?",
+      "gold_answers": [
+        "Indianapolis Colts",
+        "the Indianapolis Colts",
+        "Colts"
+      ],
+      "prediction": "New York Giants",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.231996,
+      "example_time_sec": 0.231997,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 254,
+      "query": "Who did the Broncos play in the last week of the regular season?",
+      "gold_answers": [
+        "San Diego Chargers",
+        "San Diego Chargers",
+        "Chargers"
+      ],
+      "prediction": "New Orleans Saints",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.205017,
+      "example_time_sec": 0.20502,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 255,
+      "query": "Who is Denver's defensive coordinator?",
+      "gold_answers": [
+        "Wade Phillips",
+        "Wade Phillips",
+        "Phillips"
+      ],
+      "prediction": "Mike Tolbert",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.213592,
+      "example_time_sec": 0.213594,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 256,
+      "query": "How many years was John Fox the head coach of the Denver Broncos?",
+      "gold_answers": [
+        "four",
+        "four",
+        "four"
+      ],
+      "prediction": "three",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.106445,
+      "example_time_sec": 0.106447,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 257,
+      "query": "What is the name of the Bronco's head coach, who was hired after John Fox?",
+      "gold_answers": [
+        "Gary Kubiak",
+        "Gary Kubiak",
+        "Kubiak"
+      ],
+      "prediction": "mike mccartney",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.399884,
+      "example_time_sec": 0.399886,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 258,
+      "query": "What was the first team Peyton Manning began playing for?",
+      "gold_answers": [
+        "Indianapolis Colts",
+        "the Indianapolis Colts",
+        "1998"
+      ],
+      "prediction": "New York Giants",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.202967,
+      "example_time_sec": 0.202969,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 259,
+      "query": "How old was Peyton Manning in 2015?",
+      "gold_answers": [
+        "39",
+        "39",
+        "39"
+      ],
+      "prediction": "ten",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.132228,
+      "example_time_sec": 0.13223,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 260,
+      "query": "In the 10th week of the 2015 season, what injury was Peyton Manning dealing with?",
+      "gold_answers": [
+        "plantar fasciitis",
+        "a partial tear of the plantar fasciitis"
+      ],
+      "prediction": "a broken leg",
+      "exact_match": 0,
+      "f1_score": 0.2,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.215648,
+      "example_time_sec": 0.21565,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 261,
+      "query": "When John Fox left as head coach for the Broncos, who replaced him?",
+      "gold_answers": [
+        "Gary Kubiak",
+        "Gary Kubiak",
+        "Kubiak"
+      ],
+      "prediction": "mike scott",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.287874,
+      "example_time_sec": 0.287876,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 262,
+      "query": "Who was the quarterback for the Broncos 2015 season?",
+      "gold_answers": [
+        "Peyton Manning",
+        "Peyton Manning",
+        "Manning"
+      ],
+      "prediction": "Tom Brady",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.150237,
+      "example_time_sec": 0.150239,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 263,
+      "query": "What injury did Manning suffer the summer before the season started?",
+      "gold_answers": [
+        "a plantar fasciitis injury",
+        "a plantar fasciitis injury",
+        "plantar fasciitis"
+      ],
+      "prediction": "sprained right knee",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.282905,
+      "example_time_sec": 0.282907,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 264,
+      "query": "How old was Manning at the beginning of the 2015 season?",
+      "gold_answers": [
+        "39",
+        "39",
+        "39"
+      ],
+      "prediction": "19",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.105215,
+      "example_time_sec": 0.105217,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 265,
+      "query": "How many games did the Broncos lose during their regular 2015 season?",
+      "gold_answers": [
+        "four",
+        "4",
+        "4"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.143223,
+      "example_time_sec": 0.143225,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 266,
+      "query": "What coach left the Broncos after the season prior to Super Bowl 50?",
+      "gold_answers": [
+        "John Fox",
+        "John Fox",
+        "Fox"
+      ],
+      "prediction": "bobby mccartney",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.387796,
+      "example_time_sec": 0.387798,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 267,
+      "query": "According to game stats, which Super Bowl 50 quarterback had his worst year since his first season as a player in the NFL?",
+      "gold_answers": [
+        "Peyton Manning",
+        "Peyton Manning",
+        "Manning"
+      ],
+      "prediction": "jacksonville jacksonville",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.347637,
+      "example_time_sec": 0.347639,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 268,
+      "query": "Who was the Denver head coach for Super Bowl 50?",
+      "gold_answers": [
+        "Gary Kubiak",
+        "Gary Kubiak",
+        "Kubiak"
+      ],
+      "prediction": "mike mccartney",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.393509,
+      "example_time_sec": 0.393512,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 269,
+      "query": "What foot was injured on Manning that sidelined him in week 10?",
+      "gold_answers": [
+        "left foot.",
+        "left",
+        "left"
+      ],
+      "prediction": "hamstring",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.174899,
+      "example_time_sec": 0.174901,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 270,
+      "query": "Who was the defensive coordinator for the Broncos in 2015?",
+      "gold_answers": [
+        "Wade Phillips",
+        "Wade Phillips",
+        "Phillips"
+      ],
+      "prediction": "Mike Tomlinson",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.247876,
+      "example_time_sec": 0.247878,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 271,
+      "query": "What was Peyton Manning's passer rating for the season?",
+      "gold_answers": [
+        "67.9",
+        "67.9",
+        "67.9"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.145254,
+      "example_time_sec": 0.145256,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 272,
+      "query": "How many picks did Peyton Manning throw in the season?",
+      "gold_answers": [
+        "17",
+        "17",
+        "17"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.127067,
+      "example_time_sec": 0.12707,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 273,
+      "query": "Who registered the most receptions on the Broncos?",
+      "gold_answers": [
+        "Demaryius Thomas",
+        "Demaryius Thomas",
+        "Thomas"
+      ],
+      "prediction": "Darren Sharper",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.209813,
+      "example_time_sec": 0.209815,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 274,
+      "query": "Who had the most rushing yards on the Broncos?",
+      "gold_answers": [
+        "C. J. Anderson",
+        "C. J. Anderson",
+        "Anderson"
+      ],
+      "prediction": "Tom Brady",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.142422,
+      "example_time_sec": 0.142424,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 275,
+      "query": "How many touchdowns did Brock Osweiler throw in the season?",
+      "gold_answers": [
+        "10",
+        "10",
+        "10"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.141248,
+      "example_time_sec": 0.14125,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 276,
+      "query": "What was the passer rating for Peyton Manning that he finished out with for the season?",
+      "gold_answers": [
+        "67.9",
+        "67.9",
+        "67.9"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.150758,
+      "example_time_sec": 0.150761,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 277,
+      "query": "How may yards did Peyton Manning throw?",
+      "gold_answers": [
+        "2,249",
+        "2,249",
+        "2,249"
+      ],
+      "prediction": "57",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.133974,
+      "example_time_sec": 0.133976,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 278,
+      "query": "What was the number of 17 interceptions that Peyton Manning had by end of the year?",
+      "gold_answers": [
+        "nine",
+        "17",
+        "career-low 67.9 passer rating,"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.101401,
+      "example_time_sec": 0.101403,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 279,
+      "query": "Who had the most receptions out of all players for the year?",
+      "gold_answers": [
+        "Demaryius Thomas",
+        "Demaryius Thomas",
+        "Thomas"
+      ],
+      "prediction": "Jeremy Maclin",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.200617,
+      "example_time_sec": 0.200618,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 280,
+      "query": "What position does Demaryius Thomas play?",
+      "gold_answers": [
+        "receiver",
+        "receiver",
+        "Thomas"
+      ],
+      "prediction": "defensive tackle",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.132146,
+      "example_time_sec": 0.132148,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 281,
+      "query": "What was Manning's passer rating at the end of the season?",
+      "gold_answers": [
+        "67.9",
+        "67.9",
+        "67.9"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.136129,
+      "example_time_sec": 0.136131,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 282,
+      "query": "How many times was Manning intercepted during the 2015 season?",
+      "gold_answers": [
+        "17",
+        "17",
+        "17"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.137711,
+      "example_time_sec": 0.137714,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 283,
+      "query": "Who led the Broncos with 105 receptions?",
+      "gold_answers": [
+        "Demaryius Thomas",
+        "Demaryius Thomas",
+        "Thomas"
+      ],
+      "prediction": "mike scott",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.313554,
+      "example_time_sec": 0.313556,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 284,
+      "query": "How many touchdowns did Ronnie Hillman make?",
+      "gold_answers": [
+        "5",
+        "five",
+        "five"
+      ],
+      "prediction": "2",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.105951,
+      "example_time_sec": 0.105954,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 285,
+      "query": "What was Manning's passer rating for the 2015 season?",
+      "gold_answers": [
+        "67.9",
+        "67.9",
+        "67.9"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.135236,
+      "example_time_sec": 0.135238,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 286,
+      "query": "How many interceptions did manning have in 2015?",
+      "gold_answers": [
+        "17",
+        "17",
+        "17"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.14717,
+      "example_time_sec": 0.147172,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 287,
+      "query": "What Denver player caught the ball 76 times in the 2015 season?",
+      "gold_answers": [
+        "Emmanuel Sanders",
+        "Emmanuel Sanders",
+        "Sanders"
+      ],
+      "prediction": "Jeremy Hill",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.182778,
+      "example_time_sec": 0.182781,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 288,
+      "query": "Who was the Broncos' leading rusher for the 2015 season?",
+      "gold_answers": [
+        "C. J. Anderson",
+        "C. J. Anderson",
+        "Anderson"
+      ],
+      "prediction": "Jeremy Hill",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.182872,
+      "example_time_sec": 0.182875,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 289,
+      "query": "What was Ronnie Hillman's average yards per carry in 2015?",
+      "gold_answers": [
+        "4.7",
+        "4.7",
+        "4.7"
+      ],
+      "prediction": "6.5",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.141731,
+      "example_time_sec": 0.141733,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 290,
+      "query": "How many yards did the Broncos' defense give up?",
+      "gold_answers": [
+        "4,530",
+        "4,530",
+        "4,530"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.135134,
+      "example_time_sec": 0.135137,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 291,
+      "query": "How many sacks did Derek Wolfe register?",
+      "gold_answers": [
+        "5½",
+        "5½",
+        "5½"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.132393,
+      "example_time_sec": 0.132395,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 292,
+      "query": "Who was first on the team in total tackles?",
+      "gold_answers": [
+        "Brandon Marshall",
+        "Brandon Marshall",
+        "Marshall"
+      ],
+      "prediction": "Jeremy Maclin",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.211981,
+      "example_time_sec": 0.211983,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 293,
+      "query": "How many picks did Aqib Talib have?",
+      "gold_answers": [
+        "three",
+        "three",
+        "three"
+      ],
+      "prediction": "ten",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.137801,
+      "example_time_sec": 0.137803,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 294,
+      "query": "What position does DeMarcus currently play?",
+      "gold_answers": [
+        "Linebacker",
+        "Linebacker",
+        "Linebacker"
+      ],
+      "prediction": "wide receiver",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 0.0,
+      "generation_time_sec": 0.124402,
+      "example_time_sec": 0.124405,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 295,
+      "query": "What position does Brandon Marshall currently play?",
+      "gold_answers": [
+        "Linebacker",
+        "Linebacker",
+        "Linebacker"
+      ],
+      "prediction": "wide receiver",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.134425,
+      "example_time_sec": 0.134427,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 296,
+      "query": "What is the position Derek Wolfe plays currently?",
+      "gold_answers": [
+        "Defensive ends",
+        "Defensive ends",
+        "Defensive ends"
+      ],
+      "prediction": "winger",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.16255,
+      "example_time_sec": 0.162552,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 297,
+      "query": "How many points did the Broncos defense allow their opponents to get?",
+      "gold_answers": [
+        "296",
+        "296",
+        "296"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.128461,
+      "example_time_sec": 0.128463,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 298,
+      "query": "Which linebacker had the most sacks on the team?",
+      "gold_answers": [
+        "Von Miller",
+        "Von Miller",
+        "Miller"
+      ],
+      "prediction": "Bill Belichick",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.215332,
+      "example_time_sec": 0.215335,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 299,
+      "query": "Which linebacker led the Broncos in tackles?",
+      "gold_answers": [
+        "Brandon Marshall",
+        "Brandon Marshall",
+        "Marshall"
+      ],
+      "prediction": "Jeremy Maclin",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.206198,
+      "example_time_sec": 0.2062,
+      "retrieved_chunks": []
+    },
+    {
+      "index": 300,
+      "query": "How many interceptions did Aqib Talib have for the regular season?",
+      "gold_answers": [
+        "three.",
+        "three",
+        "three"
+      ],
+      "prediction": "0",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "answer_containment": 0,
+      "retrieval_time_sec": 1e-06,
+      "generation_time_sec": 0.127785,
+      "example_time_sec": 0.127787,
+      "retrieved_chunks": []
+    }
+  ]
+}

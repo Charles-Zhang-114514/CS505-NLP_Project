@@ -1,0 +1,47 @@
+[
+  {
+    "question": "where did they film hot tub time machine",
+    "gold_answers": [
+      "Fernie Alpine Resort"
+    ],
+    "prediction": "Vancouver, British Columbia",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who has the right of way in international waters",
+    "gold_answers": [
+      "Neither vessel"
+    ],
+    "prediction": "the United States",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who does annie work for attack on titan",
+    "gold_answers": [
+      "Marley"
+    ],
+    "prediction": "a sailor",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "when was the immigration reform and control act passed",
+    "gold_answers": [
+      "November 6, 1986"
+    ],
+    "prediction": "December 15, 1894",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "when was puerto rico added to the usa",
+    "gold_answers": [
+      "1950"
+    ],
+    "prediction": "1889",
+    "em": 0,
+    "f1": 0.0
+  }
+]

@@ -1,0 +1,190 @@
+[
+  {
+    "question": "when was the last time anyone was on the moon",
+    "gold_answers": [
+      "14 December 1972 UTC",
+      "December 1972"
+    ],
+    "prediction": "",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who wrote he ain't heavy he's my brother lyrics",
+    "gold_answers": [
+      "Bobby Scott",
+      "Bob Russell"
+    ],
+    "prediction": "Burke's Appeal was \"a most admirable book—the best & most useful on political subjects that I have ever seen\"",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "how many seasons of the bastard executioner are there",
+    "gold_answers": [
+      "one",
+      "one season"
+    ],
+    "prediction": "",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "when did the eagles win last super bowl",
+    "gold_answers": [
+      "2017"
+    ],
+    "prediction": "",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who won last year's ncaa women's basketball",
+    "gold_answers": [
+      "South Carolina"
+    ],
+    "prediction": "Raleigh Bullfrogs",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "when did the isle of wight become an island",
+    "gold_answers": [
+      "During the last Ice Age"
+    ],
+    "prediction": "",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "love yourself by justin bieber is about who",
+    "gold_answers": [
+      "Rihanna"
+    ],
+    "prediction": "Chinese: ; traditional Chinese: ; simplified Chinese: ; simplified Chinese: ) to celebrate the tenth anniversary of the San Francisco torch relay.",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who was the ruler of england in 1616",
+    "gold_answers": [
+      "James I"
+    ],
+    "prediction": "King Philip",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "what is the hot coffee mod in san andreas",
+    "gold_answers": [
+      "a normally inaccessible mini-game"
+    ],
+    "prediction": "apricot",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "what is the maximum data rate for the 802.11a standard select one",
+    "gold_answers": [
+      "54 Mbit/s"
+    ],
+    "prediction": "12 terabytes/month",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "which state is located in the centre of india",
+    "gold_answers": [
+      "Chhattisgarh",
+      "Madhya Pradesh"
+    ],
+    "prediction": "The Nizam VII capitulated to the Indian Union by signing an Instrument of Accession, which made him the Rajpramukh (Princely Governor) of the state until 31 October 1956.",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who sang i ran all the way home",
+    "gold_answers": [
+      "The Impalas"
+    ],
+    "prediction": "Madonna",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "where did the last name wallace come from",
+    "gold_answers": [
+      "a Scottish surname"
+    ],
+    "prediction": "unanswerable",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who was the actor that played ben stone on law and order",
+    "gold_answers": [
+      "Michael Moriarty"
+    ],
+    "prediction": "Gregory Peck",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who does the voice of nala in the lion king",
+    "gold_answers": [
+      "Niketa Calame",
+      "Sally Dworsky",
+      "Moira Kelly",
+      "Laura Williams"
+    ],
+    "prediction": "sarah taylor",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who plays gram on the young and the restless",
+    "gold_answers": [
+      "Max Shippee"
+    ],
+    "prediction": "Northwestern alumni are a diverse group of people.",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "what is the oath that new citizens take",
+    "gold_answers": [
+      "United States Oath of Allegiance"
+    ],
+    "prediction": "Volume of Sacred Law",
+    "em": 0,
+    "f1": 0.22222222222222224
+  },
+  {
+    "question": "who is under the mask of darth vader",
+    "gold_answers": [
+      "Anakin Skywalker"
+    ],
+    "prediction": "Richard I",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "who had a baby at 100 in the bible",
+    "gold_answers": [
+      "Sarah",
+      "Abraham"
+    ],
+    "prediction": "Augustin Bea",
+    "em": 0,
+    "f1": 0.0
+  },
+  {
+    "question": "what age do you need to be to buy a bb gun",
+    "gold_answers": [
+      "18"
+    ],
+    "prediction": "unanswerable",
+    "em": 0,
+    "f1": 0.0
+  }
+]
