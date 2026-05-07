@@ -334,6 +334,7 @@ This extracts FLAN-T5 decoder-to-encoder cross-attention and computes answer att
 python scripts/chunk_size_diagnostics.py cross-attention \
   --result_path results/bm25_fixed70.json \
   --example_indices 7 15 31 59 83 \
+  --label_source gold \
   --output_dir results/attention_fixed70 \
   --output_png
 ```
