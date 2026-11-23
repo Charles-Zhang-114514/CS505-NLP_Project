@@ -1,5 +1,15 @@
 # CS505 NLP Project - Modular RAG Experiments
 
+> **A Modern Modular Approach to Retrieval-Augmented Generation**  
+> Aohan Mei, Haoran Zhang, Haotian Liu, Jiasong Huang  
+> Boston University · CS505 Natural Language Processing · Spring 2026
+>
+> 📄 **[Paper (PDF)](paper/Modular_RAG_Final_Paper.pdf)**
+>
+> We build a modular RAG system on SQuAD in which chunking, retrieval, and generation can be varied independently. A controlled chunk-size sweep shows that the apparent advantage of semantic chunking is dominated by chunk length rather than sentence-aware boundaries, and a cross-attention probe shows that beyond roughly 80 tokens the generator effectively stops using retrieved context.
+
+---
+
 This repository contains a modular question answering (QA) experimentation framework for Retrieval-Augmented Generation (RAG). It supports:
 
 - closed-book QA (no retrieval),
